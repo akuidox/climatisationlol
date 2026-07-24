@@ -1,0 +1,14 @@
+# Systeme
+.DS_Store
+Thumbs.db
+desktop.ini
+*.textClipping
+
+# Editeurs
+.vscode/
+.idea/
+*.swp
+
+# Divers
+*.log
+node_modules/

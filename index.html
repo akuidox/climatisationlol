@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climatisation LOL — Thermopompes résidentielles | Réparation & installation</title>
+<meta name="description" content="Réparation et installation de thermopompes et unités de climatisation résidentielles. Service rapide, propre et garanti dans votre région.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 50 50 2A48 48 0 0 1 91.6 74Z" fill="%232ea44f"/><path d="M50 50 91.6 74A48 48 0 0 1 8.4 74Z" fill="%231c9fd8"/><path d="M50 50 8.4 74A48 48 0 0 1 50 2Z" fill="%23d7332e"/></svg>'>
+
+<!-- =========================================================
+     CLIMATISATION LOL — Gabarit / squelette HTML-CSS-JS
+     Direction visuelle : « thermique éditorial »
+     - Duotone chaud/froid animé (le confort se mesure)
+     - Typo XXL + grille asymétrique pour sortir du lot
+     - Animations au scroll (IntersectionObserver)
+     - Hero avec IMAGE de fond + section VIDÉO en haut
+     - Sections prêtes à brancher : Facebook (galerie) + Avis Google
+     Tout est dans un seul fichier, aucune dépendance externe requise.
+     ========================================================= -->
+
+<style>
+/* ---------- Variables ---------- */
+:root{
+  --froid:#1c9fd8;        /* bleu marque ❄ */
+  --froid-2:#1573b8;      /* bleu profond  */
+  --vert:#2ea44f;         /* vert marque 🌬 */
+  --chaud:#d7332e;        /* rouge marque 🔥*/
+  --chaud-2:#e8823a;      /* ambre chaud   */
+  --noir:#0a0e14;         /* fond          */
+  --noir-2:#111825;       /* cartes        */
+  --gris:#8a96a8;         /* texte doux    */
+  --blanc:#f4f8ff;
+  --radius:20px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--noir);
+  color:var(--blanc);
+  overflow-x:hidden;
+  line-height:1.5;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+section{position:relative}
+
+/* ---------- Aura thermique animée (fond global) ---------- */
+.aura{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55}
+.aura::before,.aura::after{
+  content:"";position:absolute;width:60vw;height:60vw;border-radius:50%;
+  filter:blur(90px);opacity:.35;animation:drift 18s var(--ease) infinite alternate;
+}
+.aura::before{background:var(--froid);top:-10%;left:-10%}
+.aura::after{background:var(--chaud);bottom:-15%;right:-10%;animation-delay:-9s}
+@keyframes drift{to{transform:translate(12vw,10vh) scale(1.25)}}
+
+/* ---------- Nav ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 6vw;
+  backdrop-filter:blur(14px);
+  background:rgba(10,14,20,.35);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  transition:padding .4s var(--ease),background .4s var(--ease);
+}
+header.scrolled{padding:12px 6vw;background:rgba(10,14,20,.8)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
+.logo .dot{
+  width:38px;height:38px;display:grid;place-items:center;
+  filter:drop-shadow(0 0 14px rgba(28,159,216,.35));
+}
+.logo .dot svg{width:100%;height:100%}
+.logo span b{background:linear-gradient(90deg,var(--chaud),var(--vert),var(--froid));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:30px;list-style:none;font-size:.92rem;font-weight:500}
+nav a{position:relative;color:var(--gris);transition:color .25s}
+nav a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:linear-gradient(90deg,var(--froid),var(--chaud));transition:width .3s var(--ease)}
+nav a:hover{color:var(--blanc)}
+nav a:hover::after{width:100%}
+.nav-cta{
+  padding:10px 20px;border-radius:999px;font-weight:700;font-size:.9rem;color:var(--noir);
+  background:linear-gradient(90deg,var(--froid),var(--chaud-2));
+  box-shadow:0 6px 24px rgba(255,106,61,.28);
+  transition:transform .25s var(--ease),box-shadow .25s;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,106,61,.45)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{width:26px;height:2px;background:var(--blanc);border-radius:2px}
+
+/* ---------- HERO (image de fond) ---------- */
+.hero{
+  min-height:100vh;display:flex;align-items:center;padding:140px 6vw 80px;
+  position:relative;z-index:1;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(105deg,rgba(10,14,20,.92) 25%,rgba(10,14,20,.55) 60%,rgba(10,14,20,.2)),
+    url("https://images.unsplash.com/photo-1631545806609-24a5f0c3f9f5?q=80&w=1600&auto=format&fit=crop") center/cover;
+}
+.hero-inner{max-width:760px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;font-size:.82rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--froid);margin-bottom:26px;
+  border:1px solid rgba(46,230,214,.3);padding:8px 16px;border-radius:999px;
+  background:rgba(46,230,214,.06);
+}
+.eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--froid);box-shadow:0 0 0 0 var(--froid);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(46,230,214,.6)}70%{box-shadow:0 0 0 10px rgba(46,230,214,0)}100%{box-shadow:0 0 0 0 rgba(46,230,214,0)}}
+.hero h1{
+  font-size:clamp(2.6rem,6.5vw,5rem);line-height:1.02;letter-spacing:-.03em;font-weight:800;margin-bottom:24px;
+}
+.hero h1 .grad{background:linear-gradient(100deg,var(--froid),var(--vert),var(--chaud-2),var(--chaud));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.18rem;color:var(--gris);max-width:560px;margin-bottom:36px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.btn{
+  padding:16px 30px;border-radius:999px;font-weight:700;font-size:1rem;cursor:pointer;border:none;
+  transition:transform .25s var(--ease),box-shadow .25s;
+}
+.btn-primary{background:linear-gradient(90deg,var(--chaud),var(--chaud-2));color:var(--noir);box-shadow:0 10px 34px rgba(255,106,61,.35)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(255,106,61,.5)}
+.btn-ghost{background:transparent;color:var(--blanc);border:1px solid rgba(255,255,255,.2)}
+.btn-ghost:hover{border-color:var(--froid);color:var(--froid)}
+.hero-stats{display:flex;gap:40px;margin-top:56px;flex-wrap:wrap}
+.stat b{font-size:2rem;font-weight:800;background:linear-gradient(90deg,var(--froid),var(--chaud-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;font-size:.85rem;color:var(--gris);margin-top:2px}
+
+/* ---------- Bandeau villes (marquee) ---------- */
+.marquee{
+  position:relative;z-index:1;overflow:hidden;padding:22px 0;
+  border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);
+  background:rgba(17,24,37,.5);
+}
+.marquee-track{display:flex;gap:60px;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
+.marquee-track span{font-size:1.05rem;font-weight:600;color:var(--gris);display:flex;align-items:center;gap:60px}
+.marquee-track span::before{content:"❄";color:var(--froid)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- Sections génériques ---------- */
+.wrap{max-width:1200px;margin:0 auto;padding:120px 6vw;position:relative;z-index:1}
+.sec-head{max-width:640px;margin-bottom:60px}
+.sec-tag{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--chaud);display:block;margin-bottom:16px}
+.sec-head h2{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.05;letter-spacing:-.03em;font-weight:800}
+.sec-head p{color:var(--gris);font-size:1.1rem;margin-top:18px}
+
+/* ---------- VIDÉO (section haute) ---------- */
+.video-band{padding:80px 6vw 0}
+.video-shell{
+  max-width:1200px;margin:0 auto;position:relative;border-radius:var(--radius);overflow:hidden;
+  box-shadow:0 40px 100px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.08);
+  aspect-ratio:16/8;
+}
+.video-shell video{width:100%;height:100%;object-fit:cover}
+.video-overlay{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:40px;background:linear-gradient(0deg,rgba(10,14,20,.85),transparent 60%);
+}
+.video-overlay h3{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;letter-spacing:-.02em}
+.video-overlay p{color:var(--gris);margin-top:8px;max-width:520px}
+.play-badge{
+  position:absolute;top:24px;left:24px;display:flex;align-items:center;gap:10px;
+  padding:8px 16px;border-radius:999px;background:rgba(10,14,20,.6);backdrop-filter:blur(8px);
+  font-size:.82rem;font-weight:600;border:1px solid rgba(255,255,255,.12);
+}
+.play-badge .rec{width:9px;height:9px;border-radius:50%;background:var(--chaud);animation:pulse 2s infinite}
+
+/* ---------- Services ---------- */
+.grid-services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.card{
+  background:linear-gradient(180deg,var(--noir-2),rgba(17,24,37,.4));
+  border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);padding:34px 30px;
+  transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;position:relative;overflow:hidden;
+}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--froid),var(--chaud));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.card:hover{transform:translateY(-8px);border-color:rgba(46,230,214,.35);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.card:hover::before{transform:scaleX(1)}
+.card .ico{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:26px;margin-bottom:22px;background:rgba(46,230,214,.1);border:1px solid rgba(46,230,214,.2)}
+.card h3{font-size:1.4rem;font-weight:700;margin-bottom:12px;letter-spacing:-.02em}
+.card p{color:var(--gris);font-size:.98rem}
+.card .price{margin-top:20px;font-size:.85rem;color:var(--froid);font-weight:600}
+
+/* ---------- Endroits desservis ---------- */
+.zones-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.zones-map{
+  border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.08);
+  background:
+    radial-gradient(circle at 30% 40%,rgba(46,230,214,.18),transparent 40%),
+    radial-gradient(circle at 70% 65%,rgba(255,106,61,.16),transparent 40%),
+    linear-gradient(180deg,#0d1520,#0a0e14);
+  aspect-ratio:4/3;position:relative;display:grid;place-items:center;
+}
+.zones-map .pin{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--froid);box-shadow:0 0 0 6px rgba(46,230,214,.15)}
+.zones-map .pin::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--froid);animation:pulse 2.4s infinite}
+.zones-map .label{color:var(--gris);font-size:.85rem;position:absolute;bottom:18px;left:18px}
+.zones-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.zones-list li{
+  display:flex;align-items:center;gap:12px;font-weight:600;padding:14px 16px;border-radius:14px;
+  background:rgba(17,24,37,.6);border:1px solid rgba(255,255,255,.06);transition:border-color .3s,transform .3s
+}
+.zones-list li:hover{border-color:rgba(46,230,214,.4);transform:translateX(4px)}
+.zones-list li::before{content:"📍";font-size:1rem}
+
+/* ---------- Galerie Facebook ---------- */
+.fb-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:40px}
+.fb-badge{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--gris)}
+.fb-badge .fbico{width:34px;height:34px;border-radius:9px;background:#1877f2;display:grid;place-items:center;font-weight:800;color:#fff}
+.masonry{columns:3;column-gap:18px}
+.masonry figure{break-inside:avoid;margin-bottom:18px;border-radius:16px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.07)}
+.masonry img{width:100%;transition:transform .6s var(--ease)}
+.masonry figure:hover img{transform:scale(1.06)}
+.masonry figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px;font-size:.82rem;background:linear-gradient(0deg,rgba(10,14,20,.85),transparent);opacity:0;transition:opacity .3s}
+.masonry figure:hover figcaption{opacity:1}
+/* NOTE INTÉGRATION FACEBOOK :
+   Remplacer cette galerie « démo » par le fil réel via :
+   - Plugin gratuit « Page Facebook » (facebook.com/plugins/page) OU
+   - Widget Elfsight / Smash Balloon (recommandé WordPress) pour tirer
+     automatiquement les photos publiées sur la Page Facebook. */
+
+/* ---------- Avis Google ---------- */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.review{
+  background:var(--noir-2);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);padding:30px;
+  transition:transform .35s var(--ease),border-color .35s
+}
+.review:hover{transform:translateY(-6px);border-color:rgba(255,176,32,.4)}
+.review .stars{color:var(--chaud-2);font-size:1.05rem;letter-spacing:2px;margin-bottom:16px}
+.review p{color:var(--blanc);font-size:.98rem;margin-bottom:22px}
+.review .who{display:flex;align-items:center;gap:12px}
+.review .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:var(--noir);background:linear-gradient(135deg,var(--froid),var(--chaud-2))}
+.review .who b{font-size:.95rem}
+.review .who span{display:block;font-size:.8rem;color:var(--gris)}
+.g-summary{display:flex;align-items:center;gap:18px;margin-bottom:44px;flex-wrap:wrap}
+.g-summary .score{font-size:3rem;font-weight:800;line-height:1}
+.g-summary .gl{font-weight:700}
+.g-summary .gl b:nth-child(1){color:#4285F4}.g-summary .gl b:nth-child(2){color:#EA4335}.g-summary .gl b:nth-child(3){color:#FBBC05}.g-summary .gl b:nth-child(4){color:#4285F4}.g-summary .gl b:nth-child(5){color:#34A853}.g-summary .gl b:nth-child(6){color:#EA4335}
+/* NOTE INTÉGRATION GOOGLE :
+   Brancher les vrais avis via l'API Google Places OU un widget
+   (Elfsight Google Reviews / Trustindex) pour afficher automatiquement
+   les commentaires laissés sur la fiche Google Business. */
+
+/* ---------- CTA finale ---------- */
+.cta{
+  margin:0 6vw 120px;border-radius:28px;padding:70px 8%;text-align:center;position:relative;z-index:1;overflow:hidden;
+  background:linear-gradient(120deg,rgba(46,230,214,.14),rgba(255,106,61,.14));
+  border:1px solid rgba(255,255,255,.1);
+}
+.cta h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:18px}
+.cta p{color:var(--gris);max-width:520px;margin:0 auto 34px;font-size:1.1rem}
+.cta .btn-primary{font-size:1.05rem}
+
+/* ---------- Footer ---------- */
+footer{position:relative;z-index:1;padding:60px 6vw 40px;border-top:1px solid rgba(255,255,255,.07)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto}
+.foot-grid p{color:var(--gris);font-size:.92rem;margin-top:16px;max-width:320px}
+.foot-grid h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gris);margin-bottom:18px}
+.foot-grid ul{list-style:none;display:grid;gap:12px;font-size:.95rem}
+.foot-grid a{color:var(--blanc);opacity:.8}.foot-grid a:hover{opacity:1;color:var(--froid)}
+.foot-bottom{max-width:1200px;margin:44px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--gris);font-size:.85rem}
+
+/* ---------- Animations au scroll ---------- */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media(max-width:900px){
+  nav ul,.nav-cta{display:none}
+  .burger{display:flex}
+  .zones-grid{grid-template-columns:1fr}
+  .masonry{columns:2}
+  .foot-grid{grid-template-columns:1fr;gap:30px}
+}
+@media(max-width:560px){
+  .masonry{columns:1}
+  .hero-stats{gap:24px}
+  .zones-list{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="aura"></div>
+
+<!-- ================= NAV ================= -->
+<header id="site-header">
+  <a class="logo" href="#"><span class="dot"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50,50 L50,2 A48,48 0 0 1 91.6,74 Z" fill="#2ea44f"/><path d="M50,50 L91.6,74 A48,48 0 0 1 8.4,74 Z" fill="#1c9fd8"/><path d="M50,50 L8.4,74 A48,48 0 0 1 50,2 Z" fill="#d7332e"/><path d="M33,32 C38,38 38,43 33,47 C28,43 28,38 33,32 Z" fill="#fff"/><path d="M58,35 q4,-4 8,0 t8,0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M58,41 q4,-4 8,0 t8,0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><line x1="50" y1="58" x2="50" y2="76" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="42.5" y1="62" x2="57.5" y2="72" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="57.5" y1="62" x2="42.5" y2="72" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span><span>Climatisation <b>LOL</b></span></a>
+  <nav>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#zones">Endroits desservis</a></li>
+      <li><a href="#galerie">Réalisations</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="#contact" class="nav-cta">Soumission gratuite</a>
+  <div class="burger" aria-label="Menu"><span></span><span></span><span></span></div>
+</header>
+
+<!-- ================= HERO (image de fond) ================= -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <span class="eyebrow"><span class="pulse"></span> Thermopompes résidentielles · Réparation & installation</span>
+    <h1>Le confort chez vous, <span class="grad">à la bonne température</span> — 365 jours par année.</h1>
+    <p class="lead">Installation et réparation de thermopompes et unités de climatisation pour votre maison. Un service rapide, propre et garanti, offert par Louis-Olivier Lorrain, un spécialiste d'ici.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView()">Obtenir ma soumission</button>
+      <a href="tel:+15146012546" class="btn btn-ghost">📞 514 601-2546</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b data-count="1200">0</b><span>installations réalisées</span></div>
+      <div class="stat"><b data-count="4.9" data-dec="1">0</b><span>note moyenne Google</span></div>
+      <div class="stat"><b data-count="24">0</b><span>h — service d'urgence</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BANDEAU VILLES ================= -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Saint-Jérôme&nbsp;&nbsp; Blainville&nbsp;&nbsp; Mirabel&nbsp;&nbsp; Boisbriand&nbsp;&nbsp; Sainte-Thérèse&nbsp;&nbsp; Terrebonne&nbsp;&nbsp; Laval&nbsp;&nbsp; Rosemère&nbsp;&nbsp;</span>
+    <span>Saint-Jérôme&nbsp;&nbsp; Blainville&nbsp;&nbsp; Mirabel&nbsp;&nbsp; Boisbriand&nbsp;&nbsp; Sainte-Thérèse&nbsp;&nbsp; Terrebonne&nbsp;&nbsp; Laval&nbsp;&nbsp; Rosemère&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<!-- ================= SECTION VIDÉO (haute) ================= -->
+<section class="video-band">
+  <div class="video-shell reveal">
+    <span class="play-badge"><span class="rec"></span> En action</span>
+    <!-- Remplacer le src par la vraie vidéo (drone d'une installation, équipe au travail, etc.) -->
+    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop">
+      <source src="https://cdn.coverr.co/videos/coverr-installing-an-air-conditioner-1584/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay">
+      <h3>Une installation, du début à la fin</h3>
+      <p>Découvrez comment notre équipe installe votre thermopompe : diagnostic, pose soignée et mise en route le jour même.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="wrap" id="services">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Nos services</span>
+    <h2>Deux spécialités, faites au quart de tour</h2>
+    <p>On se concentre sur ce qu'on fait le mieux : les thermopompes et la climatisation résidentielle. Rien de plus, rien de moins.</p>
+  </div>
+  <div class="grid-services">
+    <div class="card reveal">
+      <div class="ico">🛠️</div>
+      <h3>Installation de thermopompe</h3>
+      <p>Pose complète d'unités murales et centrales, dimensionnées pour votre maison. Travail propre, mise en route le jour même et explications claires.</p>
+      <div class="price">Soumission gratuite en 24 h</div>
+    </div>
+    <div class="card reveal">
+      <div class="ico">⚡</div>
+      <h3>Réparation & dépannage</h3>
+      <p>Votre unité ne refroidit plus ou fait du bruit ? On diagnostique rapidement et on répare la plupart des marques, souvent dès la première visite.</p>
+      <div class="price">Service d'urgence disponible</div>
+    </div>
+    <div class="card reveal">
+      <div class="ico">🧊</div>
+      <h3>Entretien saisonnier</h3>
+      <p>Nettoyage, vérification et optimisation deux fois par an pour prolonger la vie de votre appareil et garder une facture d'énergie basse.</p>
+      <div class="price">Forfaits annuels avantageux</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENDROITS DESSERVIS ================= -->
+<section class="wrap" id="zones">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Endroits desservis</span>
+    <h2>On roule jusque chez vous</h2>
+  </div>
+  <div class="zones-grid">
+    <div class="zones-map reveal">
+      <div class="pin" style="top:35%;left:40%"></div>
+      <div class="pin" style="top:55%;left:62%"></div>
+      <div class="pin" style="top:48%;left:30%"></div>
+      <span class="label">Rayon de service — Basses-Laurentides & Rive-Nord</span>
+    </div>
+    <ul class="zones-list reveal">
+      <li>Saint-Jérôme</li>
+      <li>Blainville</li>
+      <li>Mirabel</li>
+      <li>Boisbriand</li>
+      <li>Sainte-Thérèse</li>
+      <li>Terrebonne</li>
+      <li>Laval</li>
+      <li>Rosemère</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= GALERIE FACEBOOK ================= -->
+<section class="wrap" id="galerie">
+  <div class="fb-head reveal">
+    <div class="sec-head" style="margin-bottom:0">
+      <span class="sec-tag">Nos réalisations</span>
+      <h2>Directement de notre page Facebook</h2>
+    </div>
+    <span class="fb-badge"><span class="fbico">f</span> @ClimatisationLOL · mise à jour automatique</span>
+  </div>
+  <!-- DÉMO : à remplacer par le fil réel (Smash Balloon / Elfsight) -->
+  <div class="masonry reveal">
+    <figure><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Installation murale"><figcaption>Installation murale — Blainville</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop" alt="Équipe au travail"><figcaption>Notre équipe en action</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1635048424329-a9bfb146d7aa?q=80&w=800&auto=format&fit=crop" alt="Unité extérieure"><figcaption>Unité extérieure — Terrebonne</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?q=80&w=800&auto=format&fit=crop" alt="Thermopompe résidentielle"><figcaption>Thermopompe centrale</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop" alt="Maison confortable"><figcaption>Confort garanti toute l'année</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1596079890744-c1a0462d0975?q=80&w=800&auto=format&fit=crop" alt="Entretien"><figcaption>Entretien saisonnier</figcaption></figure>
+  </div>
+</section>
+
+<!-- ================= AVIS GOOGLE ================= -->
+<section class="wrap" id="avis">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Avis clients</span>
+    <h2>Ce que le monde dit de nous</h2>
+  </div>
+  <div class="g-summary reveal">
+    <div class="score">4,9</div>
+    <div>
+      <div class="stars" style="color:var(--chaud-2);font-size:1.2rem;letter-spacing:3px">★★★★★</div>
+      <div class="gl"><b>G</b><b>o</b><b>o</b><b>g</b><b>l</b><b>e</b> · plus de 180 avis vérifiés</div>
+    </div>
+  </div>
+  <!-- DÉMO : à remplacer par les vrais avis (API Google Places / widget Trustindex) -->
+  <div class="reviews-grid">
+    <div class="review reveal">
+      <div class="stars">★★★★★</div>
+      <p>« Installation de notre thermopompe faite en une seule journée. Propre, courtois et le prix était exactement celui de la soumission. Je recommande à 100 %. »</p>
+      <div class="who"><span class="av">M</span><div><b>Marie-Claude L.</b><span>Saint-Jérôme</span></div></div>
+    </div>
+    <div class="review reveal">
+      <div class="stars">★★★★★</div>
+      <p>« Notre climatiseur est tombé en panne en pleine canicule. Ils sont venus le lendemain matin et l'ont réparé sur place. Service d'urgence au top. »</p>
+      <div class="who"><span class="av">P</span><div><b>Patrick G.</b><span>Terrebonne</span></div></div>
+    </div>
+    <div class="review reveal">
+      <div class="stars">★★★★★</div>
+      <p>« Enfin une compagnie qui explique clairement ce qu'elle fait. Aucune surprise sur la facture. On a même baissé notre facture d'électricité. »</p>
+      <div class="who"><span class="av">S</span><div><b>Sophie B.</b><span>Blainville</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta reveal" id="contact">
+  <h2>Prêt à respirer un air confortable ?</h2>
+  <p>Obtenez une soumission gratuite en 24 h. Aucun engagement, juste un prix clair.</p>
+  <button class="btn btn-primary">Demander ma soumission gratuite</button>
+  <p style="margin-top:24px;font-size:.98rem">ou parlez directement à Louis-Olivier : <a href="tel:+15146012546" style="color:var(--froid);font-weight:800">514 601-2546</a></p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <a class="logo" href="#"><span class="dot"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50,50 L50,2 A48,48 0 0 1 91.6,74 Z" fill="#2ea44f"/><path d="M50,50 L91.6,74 A48,48 0 0 1 8.4,74 Z" fill="#1c9fd8"/><path d="M50,50 L8.4,74 A48,48 0 0 1 50,2 Z" fill="#d7332e"/><path d="M33,32 C38,38 38,43 33,47 C28,43 28,38 33,32 Z" fill="#fff"/><path d="M58,35 q4,-4 8,0 t8,0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M58,41 q4,-4 8,0 t8,0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><line x1="50" y1="58" x2="50" y2="76" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="42.5" y1="62" x2="57.5" y2="72" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="57.5" y1="62" x2="42.5" y2="72" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span><span>Climatisation <b>LOL</b></span></a>
+      <p>Spécialistes de la thermopompe et de la climatisation résidentielle. Réparation, installation et entretien dans les Basses-Laurentides et la Rive-Nord. Service personnalisé par Louis-Olivier Lorrain.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#zones">Endroits desservis</a></li>
+        <li><a href="#galerie">Réalisations</a></li>
+        <li><a href="#avis">Avis</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Nous joindre</h4>
+      <ul>
+        <li><a href="tel:+15146012546">514 601-2546</a></li>
+        <li><a href="mailto:info@climatisationlol.ca">info@climatisationlol.ca</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Google</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Climatisation LOL. Tous droits réservés. RBQ : 0000-0000-00</span>
+    <span>Fait avec ❄ + 🔥 dans les Laurentides</span>
+  </div>
+</footer>
+
+<script>
+/* Nav : fond au scroll */
+const header=document.getElementById('site-header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40));
+
+/* Reveal au scroll */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Compteurs animés */
+const counters=document.querySelectorAll('[data-count]');
+const cio=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,target=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||0);
+    let n=0;const step=target/60;
+    const t=setInterval(()=>{
+      n+=step;
+      if(n>=target){n=target;clearInterval(t)}
+      el.textContent=dec?n.toFixed(dec).replace('.',','):Math.floor(n).toLocaleString('fr-CA')+(target>=1000?'+':'');
+    },20);
+    cio.unobserve(el);
+  });
+},{threshold:.5});
+counters.forEach(c=>cio.observe(c));
+
+/* Menu burger (démo) */
+document.querySelector('.burger').addEventListener('click',()=>{
+  const n=document.querySelector('nav ul');
+  const open=n.style.display==='flex';
+  n.style.display=open?'':'flex';
+  Object.assign(n.style,open?{}:{position:'fixed',top:'70px',right:'6vw',flexDirection:'column',background:'rgba(17,24,37,.97)',padding:'20px',borderRadius:'16px',gap:'18px',border:'1px solid rgba(255,255,255,.1)'});
+});
+</script>
+</body>
+</html>
