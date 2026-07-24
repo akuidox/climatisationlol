@@ -99,8 +99,15 @@ nav a:hover::after{width:100%}
 .hero-bg{
   position:absolute;inset:0;z-index:-1;
   background:
-    linear-gradient(105deg,rgba(10,14,20,.92) 25%,rgba(10,14,20,.55) 60%,rgba(10,14,20,.2)),
-    url("https://images.unsplash.com/photo-1631545806609-24a5f0c3f9f5?q=80&w=1600&auto=format&fit=crop") center/cover;
+    linear-gradient(95deg,rgba(5,8,14,.9) 0%,rgba(5,8,14,.72) 42%,rgba(5,8,14,.24) 100%),
+    url("https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop") center/cover;
+  transform:scale(1.04);
+  filter:saturate(.9) contrast(1.04);
+}
+.hero-bg::after{
+  content:"";
+  position:absolute;inset:0;
+  background:radial-gradient(circle at top right,rgba(255,255,255,.08),transparent 38%),linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.42));
 }
 .hero-inner{max-width:760px}
 .eyebrow{
@@ -188,14 +195,25 @@ nav a:hover::after{width:100%}
 .zones-map{
   border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.08);
   background:
-    radial-gradient(circle at 30% 40%,rgba(46,230,214,.18),transparent 40%),
-    radial-gradient(circle at 70% 65%,rgba(255,106,61,.16),transparent 40%),
-    linear-gradient(180deg,#0d1520,#0a0e14);
-  aspect-ratio:4/3;position:relative;display:grid;place-items:center;
+    linear-gradient(140deg,rgba(10,14,20,.84),rgba(10,14,20,.24)),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop") center/cover;
+  aspect-ratio:4/3;position:relative;display:grid;place-items:center;min-height:320px;
 }
-.zones-map .pin{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--froid);box-shadow:0 0 0 6px rgba(46,230,214,.15)}
+.zones-map::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 28%,rgba(28,159,216,.22),transparent 24%),
+              radial-gradient(circle at 70% 62%,rgba(215,51,46,.16),transparent 22%);
+  pointer-events:none;
+}
+.zones-map .map-badge{
+  position:absolute;top:16px;left:16px;z-index:2;
+  padding:8px 12px;border-radius:999px;font-size:.8rem;font-weight:700;
+  background:rgba(10,14,20,.72);color:var(--blanc);border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(8px);
+}
+.zones-map .pin{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--froid);box-shadow:0 0 0 6px rgba(46,230,214,.15);z-index:2}
 .zones-map .pin::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--froid);animation:pulse 2.4s infinite}
-.zones-map .label{color:var(--gris);font-size:.85rem;position:absolute;bottom:18px;left:18px}
+.zones-map .label{color:var(--gris);font-size:.85rem;position:absolute;bottom:18px;left:18px;z-index:2}
 .zones-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .zones-list li{
   display:flex;align-items:center;gap:12px;font-weight:600;padding:14px 16px;border-radius:14px;
@@ -379,10 +397,11 @@ footer{position:relative;z-index:1;padding:60px 6vw 40px;border-top:1px solid rg
   </div>
   <div class="zones-grid">
     <div class="zones-map reveal">
+      <div class="map-badge">Rayon de service • Laurentides &amp; Rive-Nord</div>
       <div class="pin" style="top:35%;left:40%"></div>
       <div class="pin" style="top:55%;left:62%"></div>
-      <div class="pin" style="top:48%;left:30%"></div>
-      <span class="label">Rayon de service — Basses-Laurentides & Rive-Nord</span>
+      <div class="pin" style="top:48%;left:28%"></div>
+      <span class="label">Service rapide dans les villes et villages de la région</span>
     </div>
     <ul class="zones-list reveal">
       <li>Saint-Jérôme</li>
