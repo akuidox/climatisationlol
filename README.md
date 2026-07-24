@@ -9,7 +9,7 @@ climatisation résidentielles — Louis-Olivier Lorrain · 514 601-2546.
 | Fichier | Rôle |
 |---|---|
 | `index.html` | Le site complet (tout est dans un seul fichier : HTML + CSS + JS) |
-| `climatisation-lol.html` | Copie de travail identique (peut être supprimée) |
+| `README.md` | Ce fichier |
 | `.gitignore` | Fichiers ignorés par Git |
 
 ## Développement local
@@ -34,7 +34,8 @@ git push
 ## Déploiement — Hostinger (auto-deploy Git)
 
 1. hPanel → **Avancé → Git**
-2. Coller l'URL du dépôt, branche `main`, répertoire cible `public_html`
+2. Coller l'URL du dépôt (`https://github.com/akuidox/climatisationlol`), branche `main`,
+   répertoire cible `public_html`
 3. Copier l'**URL de webhook** fournie par Hostinger
 4. GitHub → dépôt → **Settings → Webhooks → Add webhook**
    - Payload URL : l'URL de webhook Hostinger
