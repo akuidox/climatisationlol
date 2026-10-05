@@ -21,8 +21,29 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
+      - name: Checkout (site actuel)
         uses: actions/checkout@v4
+        with:
+          path: src-main
+
+      - name: Checkout (aperçu de la refonte)
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: refonte-oct-2026
+          path: src-refonte
+
+      - name: Assembler le site
+        run: |
+          mkdir -p _site
+          rsync -a --exclude '.git' --exclude '.github' src-main/ _site/
+          if [ -f src-refonte/index.html ]; then
+            mkdir -p _site/refonte
+            rsync -a --exclude '.git' --exclude '.github' --exclude 'README.md' src-refonte/ _site/refonte/
+            # Aperçu temporaire : ne pas indexer dans Google
+            sed -i 's#<head>#<head>\n<meta name="robots" content="noindex, nofollow">#' _site/refonte/index.html
+            sed -i 's#<link rel="canonical"[^>]*>##' _site/refonte/index.html
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -30,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./
+          path: ./_site
 
       - name: Deploy to GitHub Pages
         id: deployment
