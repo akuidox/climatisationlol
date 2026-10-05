@@ -1,580 +1,934 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr-CA">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Climatisation LOL — Thermopompes résidentielles | Réparation & installation</title>
-<meta name="description" content="Réparation et installation de thermopompes et unités de climatisation résidentielles. Service rapide, propre et garanti dans votre région.">
-<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 50 50 2A48 48 0 0 1 91.6 74Z" fill="%232ea44f"/><path d="M50 50 91.6 74A48 48 0 0 1 8.4 74Z" fill="%231c9fd8"/><path d="M50 50 8.4 74A48 48 0 0 1 50 2Z" fill="%23d7332e"/></svg>'>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thermopompes résidentielles à Saint-Jérôme | Climatisation LOL</title>
+<meta name="description" content="Installation, diagnostic, réparation et entretien de thermopompes résidentielles à Saint-Jérôme et dans les Laurentides. 514 601-2546.">
+<link rel="canonical" href="https://climatisationlol.com/">
+<meta property="og:title" content="Thermopompes résidentielles à Saint-Jérôme | Climatisation LOL">
+<meta property="og:description" content="Installation, diagnostic, réparation et entretien de thermopompes résidentielles à Saint-Jérôme et dans les Laurentides.">
+<meta property="og:image" content="images/maison-briques-thermopompe.webp">
+<meta property="og:locale" content="fr_CA">
+<link rel="icon" href="images/logo-icone.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- =========================================================
-     CLIMATISATION LOL
-     Direction visuelle : éditoriale, papier clair, trois
-     couleurs de marque utilisées comme accents ponctuels
-     plutôt qu'en dégradé permanent. Montserrat (gras, géométrique)
-     pour les titres, Inter pour le texte courant.
-     Sections prêtes à brancher : Facebook (galerie) + Avis Google
-     Tout est dans un seul fichier, aucune dépendance externe
-     requise à part les polices Google Fonts ci-dessus.
-     ========================================================= -->
-
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "Climatisation LOL inc.",
+  "url": "https://climatisationlol.com/",
+  "telephone": "+1-514-601-2546",
+  "image": "https://climatisationlol.com/images/maison-briques-thermopompe.webp",
+  "address": {"@type": "PostalAddress", "addressLocality": "Saint-Jérôme", "addressRegion": "QC", "addressCountry": "CA"},
+  "areaServed": ["Saint-Jérôme","Mirabel","Blainville","Sainte-Thérèse","Boisbriand","Rosemère","Saint-Sauveur","Sainte-Agathe-des-Monts","Lachute","Saint-André-d'Argenteuil","Saint-Donat","Mont-Tremblant"],
+  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "07:00","closes": "16:00"}],
+  "makesOffer": [
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Installation de thermopompe"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Diagnostic et réparation de thermopompe"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Entretien et nettoyage de thermopompe"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Échangeurs d'air résidentiels"}}
+  ]
+}
+</script>
 <style>
-/* ---------- Variables ---------- */
 :root{
-  --bleu:#1c9fd8;         /* bleu marque — accent, aplats */
-  --bleu-texte:#0f6a95;   /* bleu marque assombri — texte lisible sur papier clair */
-  --vert:#2ea44f;         /* vert marque — accent, aplats */
-  --vert-texte:#1f7a3a;
-  --rouge:#d7332e;        /* rouge marque — accent, aplats */
-  --rouge-texte:#a92622;
-  --encre:#181a1e;        /* texte principal */
-  --encre-douce:#5b6169;  /* texte secondaire */
-  --papier:#f7f4ee;       /* fond */
-  --papier-2:#efeae0;     /* fond secondaire (cartes, footer) */
-  --ligne:rgba(24,26,30,.12);
-  --radius:10px;
-  --ease:cubic-bezier(.22,.8,.32,1);
-  --display:"Montserrat", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
-  --sans:"Inter", "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --blue:#0b5fd6; --blue-d:#0849a8; --blue-l:#e8f1fd; --navy:#0c1b33; --ink:#22314a; --muted:#5b6b82;
+  --beige:#f3ebdf; --beige-d:#e6d9c5; --leaf:#2f8f5b; --leaf-l:#e6f4ec; --line:#dfe6f0; --bg:#ffffff; --soft:#f6f9fd;
+  --r:18px; --shadow:0 18px 40px -18px rgba(12,27,51,.35); --shadow-s:0 6px 18px -8px rgba(12,27,51,.25);
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --hand:"Caveat",cursive;
+  --wrap:1180px;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+h1,h2,h3{color:var(--navy);line-height:1.12;letter-spacing:-.02em;margin:0}
+h2.title,.display{font-size:clamp(30px,4.2vw,48px);font-weight:800}
+h3{font-size:22px;font-weight:700}
+p{margin:0 0 14px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.eyebrow::before{content:"";width:34px;height:3px;border-radius:3px;background:currentColor}
+.lead{font-size:19px;color:var(--muted);max-width:640px}
+.hand{font-family:var(--hand);color:var(--blue);font-size:30px;line-height:1.05;font-weight:500}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;font-family:inherit;line-height:1.2}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 24px -10px rgba(11,95,214,.7)}
+.btn-primary:hover{background:var(--blue-d)}
+.btn-ghost{background:#fff;color:var(--navy);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+.btn-outline{background:transparent;color:var(--blue);border-color:var(--blue)}
+.btn-outline:hover{background:var(--blue);color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:var(--sans);
-  background:var(--papier);
-  color:var(--encre);
-  overflow-x:hidden;
-  line-height:1.55;
-}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-section{position:relative}
+/* Header */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -12px rgba(12,27,51,.25)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:46px;height:46px;border-radius:50%}
+.brand b{font-size:21px;color:var(--navy);letter-spacing:-.02em;font-weight:800;line-height:1}
+.brand b span{color:var(--blue)}
+.brand small{display:block;font-size:9.5px;letter-spacing:.16em;color:var(--muted);font-weight:600;text-transform:uppercase;margin-top:4px}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a.link{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;padding:8px 12px;border-radius:10px;position:relative}
+.nav a.link:hover{color:var(--blue)}
+.nav a.link.active{color:var(--blue)}
+.nav a.link.active::after{content:"";position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:var(--blue);border-radius:2px}
+.nav .btn{padding:11px 20px;margin-left:10px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;border-radius:12px;cursor:pointer;color:var(--navy)}
+.burger svg{width:26px;height:26px}
 
-/* ---------- Nav ---------- */
-header{
-  position:sticky;top:0;left:0;right:0;z-index:50;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:20px 6vw;
-  background:var(--papier);
-  border-bottom:1px solid var(--ligne);
-}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem;letter-spacing:-.01em;font-family:var(--display)}
-.logo .dot{width:34px;height:34px;display:grid;place-items:center;flex:none}
-.logo .dot svg{width:100%;height:100%}
-.logo span b{color:var(--bleu-texte);font-weight:600}
-nav ul{display:flex;gap:34px;list-style:none;font-size:.92rem;font-weight:500}
-nav a{position:relative;color:var(--encre-douce);transition:color .2s}
-nav a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--encre);transition:width .25s var(--ease)}
-nav a:hover{color:var(--encre)}
-nav a:hover::after{width:100%}
-.nav-cta{
-  padding:11px 22px;border-radius:6px;font-weight:600;font-size:.9rem;color:var(--papier);
-  background:var(--encre);
-  transition:background .2s;
-}
-.nav-cta:hover{background:var(--bleu-texte)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
-.burger span{width:24px;height:2px;background:var(--encre);border-radius:2px}
+/* Hero */
+.hero{padding:40px 0 70px;background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(42px,6.2vw,76px);font-weight:800;letter-spacing:-.035em;line-height:.98}
+.hero .svc-line{font-size:clamp(20px,2.4vw,28px);font-weight:700;color:var(--navy);margin:18px 0 18px;display:flex;flex-wrap:wrap;gap:6px 14px}
+.hero .svc-line i{font-style:normal;color:var(--blue)}
+.hero p.intro{font-size:18px;color:var(--muted);max-width:540px}
+.pill-aide{display:inline-flex;align-items:center;gap:10px;background:var(--leaf-l);color:#1d5c3a;font-weight:700;font-size:15px;padding:9px 16px 9px 10px;border-radius:999px;text-decoration:none;margin:4px 0 22px;border:1px solid #cfe8da;transition:background .2s}
+.pill-aide:hover{background:#d6eee1}
+.pill-aide .leaf{width:28px;height:28px;border-radius:50%;background:var(--leaf);display:grid;place-items:center;color:#fff}
+.pill-aide .leaf svg{width:15px;height:15px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.trust div{display:flex;gap:10px;align-items:center;font-size:14px;font-weight:600;color:var(--navy);line-height:1.3}
+.trust svg{width:28px;height:28px;color:var(--blue);flex:none}
+.hero-visual{position:relative;min-height:520px}
+.hero-main{position:absolute;inset:0 0 96px 30px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+.hero-main img{width:100%;height:100%;object-fit:cover}
+.hero-thumb{position:absolute;left:-10px;bottom:0;width:46%;border-radius:20px;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow);transform:rotate(-2deg)}
+.hero-thumb img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.hero-visual .hand{position:absolute;right:6px;bottom:0;transform:rotate(-5deg);max-width:240px;text-align:right}
+.hero-visual .hand::after{content:"";display:block;height:3px;width:70%;margin:4px 0 0 auto;background:var(--blue);border-radius:3px;transform:rotate(-3deg)}
 
-/* ---------- Barre CTA fixe (mobile uniquement) ---------- */
-.mobile-cta-bar{display:none}
-@media(max-width:960px){
-  .mobile-cta-bar{
-    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:10px;
-    background:var(--papier);border-top:1px solid var(--ligne);
-    padding:10px 4vw calc(10px + env(safe-area-inset-bottom));
-    box-shadow:0 -8px 24px rgba(24,26,30,.1);
-  }
-  .mobile-cta-bar a{
-    flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
-    padding:13px 10px;border-radius:6px;font-weight:700;font-size:.92rem;
-  }
-  .mobile-cta-bar a svg{width:16px;height:16px;flex:none}
-  .mobile-cta-bar .call{background:var(--encre);color:var(--papier)}
-  .mobile-cta-bar .quote{background:transparent;color:var(--encre);border:1px solid var(--ligne)}
+/* Intro beige */
+.intro-beige{background:var(--beige);padding:64px 0}
+.intro-beige .wrap{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center}
+.intro-beige .hand{font-size:40px;color:#8a5a2b;max-width:280px}
+.intro-beige p{font-size:19px;color:#4a3d2c;max-width:720px;margin:0}
+.intro-beige p+p{margin-top:12px}
+
+/* Aides */
+.aides{background:linear-gradient(180deg,var(--soft),#fff)}
+.aides .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.aides h2.eyebrow{font-size:13px;color:var(--blue);letter-spacing:.16em;margin-bottom:14px}
+.aides .text p.display{font-size:clamp(30px,4.2vw,48px);font-weight:800;color:var(--navy);line-height:1.08;letter-spacing:-.02em;margin:0}
+.aides .display em{font-style:normal;color:var(--blue)}
+.aides .text p{color:var(--muted);font-size:17.5px;max-width:580px}
+.aides .text p strong{color:var(--navy)}
+.aide-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.aide-btn{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:16px;border:1.5px solid var(--line);background:#fff;color:var(--navy);text-decoration:none;font-weight:700;font-size:14.5px;line-height:1.3;transition:border-color .2s,transform .2s,box-shadow .2s}
+.aide-btn:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:var(--shadow-s)}
+.aide-btn svg{width:26px;height:26px;color:var(--blue)}
+.aide-btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.aide-btn.primary svg{color:#fff}
+.aide-btn .ext{font-size:12px;font-weight:600;opacity:.75}
+.ads{position:relative;min-height:470px}
+.ad{position:absolute;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.ad img{width:100%;height:auto}
+.ad.a1{width:62%;left:0;top:0;transform:rotate(-2deg)}
+.ad.a2{width:52%;right:0;top:110px;transform:rotate(3deg);border:6px solid #fff}
+.ads .hand{position:absolute;left:4%;bottom:-6px;transform:rotate(-4deg);font-size:28px}
+
+/* Services */
+.services .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.svc .pics{display:grid;grid-template-columns:1fr 1fr;gap:4px;height:240px;background:var(--soft)}
+.svc .pics.one{grid-template-columns:1fr}
+.svc .pics img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.svc:hover .pics img{transform:scale(1.04)}
+.svc .pics div{overflow:hidden}
+.svc .body{padding:26px 28px 28px;display:flex;flex-direction:column;flex:1}
+.svc p{color:var(--muted);flex:1}
+.svc .more{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--blue);cursor:pointer;display:inline-flex;gap:8px;align-items:center;align-self:flex-start}
+.svc .more svg{width:16px;height:16px;transition:transform .2s}
+.svc .more:hover svg{transform:translateX(4px)}
+
+/* Réalisations */
+.real{background:var(--soft)}
+.real .head{text-align:center;max-width:720px;margin:0 auto 44px}
+.real .head .eyebrow{justify-content:center}
+.real h3{font-size:26px;margin-bottom:8px}
+.steps{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:18px;align-items:stretch}
+.steps .col{display:grid;gap:18px}
+.shot{position:relative;border-radius:20px;overflow:hidden;cursor:zoom-in;box-shadow:var(--shadow-s);background:#dde5ef;border:0;padding:0;display:block;width:100%}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.shot:hover img{transform:scale(1.05)}
+.shot figcaption,.shot .cap{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(255,255,255,.94);color:var(--navy);padding:8px 12px;border-radius:12px;font-size:13px;font-weight:600;text-align:left;line-height:1.35}
+.shot .cap b{color:var(--blue);display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.steps .col .shot{aspect-ratio:4/3.2}
+.steps .big{min-height:100%}
+.real .foot{display:flex;justify-content:space-between;gap:30px;align-items:center;margin-top:40px;flex-wrap:wrap}
+.real .foot p{color:var(--muted);max-width:680px;margin:0}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;background:rgba(8,16,30,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:30px}
+.lb.open{display:flex}
+.lb figure{margin:0;max-width:min(1100px,100%);text-align:center}
+.lb img{max-height:78vh;margin:0 auto;border-radius:14px}
+.lb figcaption{color:#fff;margin-top:14px;font-weight:600}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:24px;display:grid;place-items:center}
+.lb button:hover{background:rgba(255,255,255,.25)}
+.lb .x{top:20px;right:20px}.lb .prev{left:20px;top:50%}.lb .next{right:20px;top:50%}
+
+/* Territoire */
+.terr .wrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;align-items:center}
+.terr-photo{position:relative;border-radius:26px;overflow:hidden;height:100%;min-height:520px;box-shadow:var(--shadow)}
+.terr-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
+.terr-left{display:block}
+.terr p{color:var(--muted)}
+.mapcard{background:#fff;border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:var(--shadow-s)}
+.mapcard .mh{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.mapcard .mh svg{width:38px;height:38px;color:var(--blue)}
+.mapcard .mh b{display:block;color:var(--navy);font-size:19px}
+.mapcard .mh span{font-size:14px;color:var(--muted)}
+#map{width:100%;height:auto;display:block}
+#map .city{cursor:pointer}
+#map .city circle{fill:var(--navy);transition:r .2s}
+#map .city text{font-size:22px;font-weight:600;fill:var(--navy);font-family:var(--font)}
+#map .city.main circle{fill:var(--blue)}
+#map .city.main text{font-weight:800;fill:var(--blue);font-size:28px}
+#map .city.tbc circle{fill:#fff;stroke:#c2410c;stroke-width:2.5}
+#map .city.tbc text{fill:#c2410c}
+#map .city:hover circle,#map .city.on circle{r:11}
+#map .city.on text{fill:var(--blue)}
+.map-tip{font-size:14px;color:var(--muted);min-height:22px;margin-top:6px;text-align:center}
+.terr-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.terr-badges div{display:flex;gap:10px;align-items:center;font-size:13.5px;font-weight:600;color:var(--navy);line-height:1.3}
+.terr-badges svg{width:26px;height:26px;color:var(--blue);flex:none}
+
+/* Histoire */
+.story{background:var(--beige)}
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-photos{position:relative;min-height:540px}
+.story-photos .p1{position:absolute;left:0;top:0;width:58%;height:88%;border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.story-photos .p2{position:absolute;right:0;bottom:0;width:56%;border-radius:20px;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow);transform:rotate(2deg)}
+.story-photos img{width:100%;height:100%;object-fit:cover;object-position:top}
+.story p{color:#4a3d2c;font-size:17.5px}
+.story .people{display:flex;gap:14px;margin:26px 0 0;flex-wrap:wrap}
+.story .people span{background:#fff;border:1px solid var(--beige-d);padding:10px 16px;border-radius:14px;font-size:14px;color:var(--muted)}
+.story .people b{display:block;color:var(--navy);font-size:15.5px}
+
+/* Marques */
+.brands{padding:70px 0}
+.brand-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.brand-row div{border:1.5px dashed var(--line);border-radius:18px;padding:26px;color:var(--muted);text-align:center;font-weight:600}
+
+/* Avis */
+.reviews{background:var(--navy);color:#cfd9ea}
+.reviews .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.reviews h2{color:#fff}
+.reviews .eyebrow{color:#7fb2ff}
+.reviews p{font-size:18px}
+.g-card{background:#fff;border-radius:24px;padding:30px;color:var(--ink);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.g-card .g{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy);font-size:18px;margin-bottom:12px}
+.g-card .g svg{width:34px;height:34px}
+.g-card .stars{color:#f5b301;font-size:22px;letter-spacing:3px}
+.g-card .slot{border:1.5px dashed var(--line);border-radius:16px;padding:22px;margin:16px 0;color:var(--muted);font-size:15px;text-align:center}
+.g-card .row{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Contact */
+.contact .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.contact .side p{color:var(--muted)}
+.c-info{display:grid;gap:12px;margin-top:24px}
+.c-info a,.c-info div{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--navy);font-weight:600;background:#fff}
+.c-info a:hover{border-color:var(--blue)}
+.c-info svg{width:24px;height:24px;color:var(--blue);flex:none}
+.c-info small{display:block;color:var(--muted);font-weight:500;font-size:13.5px}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:34px;box-shadow:var(--shadow)}
+.form-card legend,.f-label{font-weight:700;color:var(--navy);font-size:15px;margin-bottom:10px;display:block;padding:0}
+fieldset{border:0;margin:0 0 22px;padding:0;min-width:0}
+.types{display:flex;flex-wrap:wrap;gap:8px}
+.types label{cursor:pointer}
+.types input{position:absolute;opacity:0;pointer-events:none}
+.types span{display:inline-block;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);font-weight:600;font-size:14.5px;color:var(--ink);transition:all .2s}
+.types label:hover span{border-color:var(--blue)}
+.types input:checked+span{background:var(--blue);color:#fff;border-color:var(--blue)}
+.types input:focus-visible+span{outline:3px solid #9cc2ff;outline-offset:2px}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f-grid .full{grid-column:1/-1}
+.field label{display:block;font-weight:600;font-size:14px;color:var(--navy);margin-bottom:6px}
+.field label .opt{color:var(--muted);font-weight:500}
+.field input,.field textarea,.field select{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:16px;color:var(--ink);background:#fff;transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-l)}
+.field.err input,.field.err textarea{border-color:#d33}
+.field .msg{display:none;color:#c22;font-size:13px;margin-top:4px}
+.field.err .msg{display:block}
+.reveal-fields{display:none}
+.reveal-fields.show{display:block;animation:fadeUp .45s ease both}
+.ctx{display:none;background:var(--leaf-l);border:1px solid #cfe8da;border-radius:16px;padding:16px 18px;margin-bottom:20px}
+.ctx.show{display:block;animation:fadeUp .4s ease both}
+.ctx .q{font-weight:700;color:var(--navy);font-size:15px;margin-bottom:8px}
+.ctx .radios{display:flex;flex-wrap:wrap;gap:16px;font-size:15px}
+.ctx .radios label{display:flex;gap:6px;align-items:center;cursor:pointer}
+.ctx .note{font-size:14px;color:#1d5c3a;margin:10px 0 0;display:none}
+.ctx .note.show{display:block}
+.ctx-hint{font-size:14px;color:var(--muted);margin:-8px 0 18px;display:none}
+.ctx-hint.show{display:block}
+.drop{border:1.5px dashed var(--line);border-radius:14px;padding:18px;text-align:center;color:var(--muted);font-size:14.5px;cursor:pointer;transition:border-color .2s,background .2s}
+.drop:hover,.drop.over{border-color:var(--blue);background:var(--blue-l)}
+.drop input{display:none}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.thumbs div{position:relative;width:72px;height:72px;border-radius:10px;overflow:hidden}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.thumbs button{position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;cursor:pointer;font-size:13px;line-height:1}
+.privacy{font-size:13px;color:var(--muted);margin:16px 0 18px}
+.form-actions{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.form-actions .alt{font-size:14px;color:var(--muted)}
+.thanks{display:none;text-align:left;animation:fadeUp .5s ease both}
+.thanks.show{display:block}
+.thanks .ok{width:62px;height:62px;border-radius:50%;background:var(--leaf-l);color:var(--leaf);display:grid;place-items:center;margin-bottom:18px}
+.thanks .ok svg{width:32px;height:32px}
+.thanks h3{font-size:28px;margin-bottom:14px}
+.thanks p{color:var(--muted)}
+
+/* Footer */
+footer{background:#081426;color:#a9b7cc;padding:64px 0 30px;font-size:15px}
+footer .grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
+footer b.t{color:#fff;display:block;margin-bottom:12px;font-size:15px}
+footer a{color:#cfdcf0;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer .brand b{color:#fff}
+footer .brand small{color:#8fa0b8}
+footer .legal{border-top:1px solid #1d2c45;margin-top:40px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px}
+
+/* Mobile call bar */
+.callbar{display:none}
+
+/* Review notes (mode révision) */
+.todo{display:none;font-size:12.5px;line-height:1.4;font-weight:600;color:#9a3412;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:7px 10px;margin:10px 0}
+.todo::before{content:"À confirmer · ";font-weight:800;letter-spacing:.02em}
+body.review .todo{display:block}
+.pending-only{display:none}
+body.review .pending-only{display:block}
+.review-toggle{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 8px;font-size:13px;font-weight:700;color:var(--navy);box-shadow:var(--shadow-s);cursor:pointer;font-family:inherit}
+.review-toggle .sw{width:38px;height:22px;border-radius:99px;background:#cbd5e1;position:relative;transition:background .2s}
+.review-toggle .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s}
+body.review .review-toggle .sw{background:#ea580c}
+body.review .review-toggle .sw::after{transform:translateX(16px)}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* Responsive */
+@media (max-width:1020px){
+  .hero .wrap,.aides .wrap,.terr .wrap,.story .wrap,.reviews .wrap,.contact .wrap{grid-template-columns:1fr;gap:40px}
+  .hero-visual{min-height:440px}
+  .terr-left{grid-template-columns:1fr}
+  .terr-photo{display:none}
+  .story-photos{min-height:440px}
+}
+@media (max-width:860px){
+  .nav{position:fixed;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:12px 20px 22px;gap:2px;border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px rgba(0,0,0,.3);transform:translateY(-8px);opacity:0;pointer-events:none;transition:all .25s}
+  .nav.open{transform:none;opacity:1;pointer-events:auto}
+  .nav a.link{padding:13px 8px;font-size:17px;border-bottom:1px solid var(--soft)}
+  .nav a.link.active::after{display:none}
+  .nav .btn{margin:12px 0 0;justify-content:center}
+  .burger{display:grid;place-items:center}
+  section{padding:68px 0}
+  .svc-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps .big{grid-column:1/-1;order:-1;aspect-ratio:4/3.2}
+  .steps .col{grid-template-columns:1fr}
+  .aide-btns{grid-template-columns:1fr}
+  .aide-btn{flex-direction:row;align-items:center}
+  .intro-beige .wrap{grid-template-columns:1fr;gap:16px}
+  .brand-row{grid-template-columns:1fr}
+  footer .grid{grid-template-columns:1fr}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px}
+  .callbar a{flex:1;justify-content:center;padding:12px 10px;font-size:15px}
   body{padding-bottom:76px}
+  .review-toggle{bottom:86px}
 }
-
-/* ---------- HERO ---------- */
-.hero{
-  padding:80px 6vw 100px;
-  display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
-}
-.kicker{display:flex;align-items:center;gap:12px;font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--encre-douce);margin-bottom:26px}
-.kicker-line{width:34px;height:1px;background:var(--rouge-texte)}
-.hero h1{
-  font-family:var(--display);font-size:clamp(2.3rem,4.4vw,3.6rem);line-height:1.1;letter-spacing:-.02em;font-weight:800;margin-bottom:24px;
-}
-.hero h1 em{font-style:normal;color:var(--bleu-texte)}
-.hero p.lead{font-size:1.12rem;color:var(--encre-douce);max-width:520px;margin-bottom:36px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:52px}
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:15px 26px;border-radius:6px;font-weight:600;font-size:.98rem;cursor:pointer;border:1px solid transparent;
-  transition:background .2s,border-color .2s,color .2s;
-}
-.btn-primary{background:var(--encre);color:var(--papier)}
-.btn-primary:hover{background:var(--bleu-texte)}
-.btn-ghost{background:transparent;color:var(--encre);border-color:var(--ligne)}
-.btn-ghost:hover{border-color:var(--encre)}
-.btn svg{width:16px;height:16px;flex:none}
-.hero-stats{display:flex;gap:0}
-.stat{padding:0 28px;border-left:1px solid var(--ligne)}
-.stat:first-child{padding-left:0;border-left:none}
-.stat b{display:block;font-family:var(--display);font-size:1.8rem;font-weight:800;color:var(--encre)}
-.stat span{display:block;font-size:.82rem;color:var(--encre-douce);margin-top:4px}
-
-.hero-visual{position:relative}
-.hero-visual .frame{
-  border-radius:var(--radius);overflow:hidden;border:1px solid var(--ligne);aspect-ratio:4/5;position:relative;
-}
-.hero-visual .frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) sepia(.06) saturate(1.05)}
-.hero-visual .frame::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(160deg,rgba(28,159,216,.16),rgba(215,51,46,.1) 60%,transparent);
-  mix-blend-mode:multiply;
-}
-.hero-visual .tag{
-  position:absolute;left:18px;bottom:18px;z-index:2;
-  padding:9px 14px;border-radius:6px;font-size:.8rem;font-weight:600;
-  background:var(--papier);color:var(--encre);border:1px solid var(--ligne);
-}
-
-/* ---------- Bandeau villes (défilement continu) ---------- */
-.zones-band{
-  position:relative;z-index:1;overflow:hidden;padding:20px 0;
-  border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);
-  background:var(--papier-2);
-}
-.zones-band-track{display:flex;gap:48px;width:max-content;animation:zones-scroll 28s linear infinite}
-.zones-band:hover .zones-band-track{animation-play-state:paused}
-.zones-band-group{display:flex;gap:48px;flex:none}
-.zones-band-group span{font-size:.95rem;font-weight:600;color:var(--encre-douce);display:flex;align-items:center;gap:10px;white-space:nowrap}
-.zones-band-group span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--bleu-texte);flex:none}
-@keyframes zones-scroll{to{transform:translateX(-50%)}}
-
-/* ---------- Sections génériques ---------- */
-.wrap{max-width:1200px;margin:0 auto;padding:110px 6vw;position:relative;z-index:1}
-.sec-head{max-width:620px;margin-bottom:64px}
-.sec-tag{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rouge-texte);display:block;margin-bottom:18px}
-.sec-head h2{font-family:var(--display);font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.18;letter-spacing:-.02em;font-weight:800}
-.sec-head p{color:var(--encre-douce);font-size:1.05rem;margin-top:18px}
-
-/* ---------- VIDÉO ---------- */
-.video-band{padding:0 6vw}
-.video-shell{
-  max-width:1200px;margin:0 auto;border-radius:var(--radius);overflow:hidden;
-  border:1px solid var(--ligne);aspect-ratio:16/8;position:relative;
-}
-.video-shell video{width:100%;height:100%;object-fit:cover;filter:grayscale(.1)}
-.video-caption{
-  max-width:1200px;margin:26px auto 0;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;
-}
-.video-caption h3{font-family:var(--display);font-size:1.25rem;font-weight:700;letter-spacing:-.01em;max-width:420px}
-.video-caption p{color:var(--encre-douce);max-width:420px;font-size:.98rem}
-.mini-cta{flex:none;font-weight:700;color:var(--bleu-texte);border-bottom:1px solid currentColor;padding-bottom:2px}
-
-/* ---------- Services (liste éditoriale, pas des cartes à icônes) ---------- */
-.services-list{border-top:1px solid var(--ligne)}
-.service-row{
-  display:grid;grid-template-columns:110px 1fr 1.1fr;gap:30px;padding:44px 0;
-  border-bottom:1px solid var(--ligne);align-items:start;
-}
-.service-row .index{font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--ligne);line-height:1}
-.service-row h3{font-family:var(--display);font-size:1.3rem;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:14px}
-.service-row h3 svg{width:22px;height:22px;color:var(--bleu-texte);flex:none}
-.service-row p{color:var(--encre-douce);font-size:1rem;max-width:520px}
-.service-row .price{margin-top:14px;font-size:.85rem;color:var(--vert-texte);font-weight:600}
-
-/* ---------- CTA intermédiaire (bande pleine largeur) ---------- */
-.mid-cta{
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
-  padding:32px 6vw;border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);
-  background:var(--papier-2);
-}
-.mid-cta p{font-size:1.05rem;font-weight:600;color:var(--encre)}
-.mid-cta p a{color:var(--bleu-texte);border-bottom:1px solid currentColor}
-.mid-cta .btn{padding:12px 22px;font-size:.92rem}
-
-/* ---------- Endroits desservis ---------- */
-.zones-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
-.zones-map{
-  border-radius:var(--radius);overflow:hidden;border:1px solid var(--ligne);
-  background:var(--papier-2);
-  aspect-ratio:4/3;position:relative;display:grid;place-items:center;min-height:300px;
-}
-.zones-map svg{width:70%;height:70%;color:var(--encre-douce)}
-.zones-map .pin{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--rouge-texte);box-shadow:0 0 0 5px rgba(215,51,46,.14)}
-.zones-map .label{color:var(--encre-douce);font-size:.85rem;position:absolute;bottom:18px;left:18px;font-weight:500}
-.zones-list{list-style:none}
-.zones-list li{
-  display:flex;align-items:center;gap:12px;font-weight:500;padding:16px 0;
-  border-bottom:1px solid var(--ligne);color:var(--encre);
-}
-.zones-list li svg{width:15px;height:15px;color:var(--bleu-texte);flex:none}
-
-/* ---------- Galerie Facebook ---------- */
-.fb-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:44px}
-.fb-badge{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:500;color:var(--encre-douce)}
-.fb-badge .fbico{width:28px;height:28px;border-radius:7px;background:#1877f2;display:grid;place-items:center;font-weight:700;color:#fff;font-size:.9rem}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.gallery-grid figure{border-radius:8px;overflow:hidden;border:1px solid var(--ligne)}
-.gallery-grid .imgwrap{aspect-ratio:4/3;overflow:hidden}
-.gallery-grid img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35);transition:transform .5s var(--ease),filter .5s}
-.gallery-grid figure:hover img{transform:scale(1.03);filter:grayscale(0)}
-.gallery-grid figcaption{padding:12px 14px;font-size:.85rem;color:var(--encre-douce);border-top:1px solid var(--ligne)}
-/* NOTE INTÉGRATION FACEBOOK :
-   Remplacer cette galerie « démo » par le fil réel via :
-   - Plugin gratuit « Page Facebook » (facebook.com/plugins/page) OU
-   - Widget Elfsight / Smash Balloon (recommandé WordPress) pour tirer
-     automatiquement les photos publiées sur la Page Facebook. */
-
-/* ---------- Avis Google ---------- */
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.review{
-  background:var(--papier-2);border:1px solid var(--ligne);border-radius:var(--radius);padding:30px;
-}
-.review .quote-mark{font-family:var(--display);font-weight:800;font-size:2.1rem;color:var(--bleu-texte);line-height:1;margin-bottom:10px}
-.review p{color:var(--encre);font-size:.98rem;margin-bottom:22px}
-.review .who{display:flex;align-items:center;gap:12px}
-.review .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:var(--papier);background:var(--encre);font-size:.9rem}
-.review .who b{font-size:.95rem}
-.review .who span{display:block;font-size:.8rem;color:var(--encre-douce)}
-.g-summary{display:flex;align-items:center;gap:18px;margin-bottom:48px;flex-wrap:wrap}
-.g-summary .score{font-family:var(--display);font-size:2.4rem;font-weight:800;line-height:1}
-.g-summary .stars{color:var(--rouge-texte);font-size:1.1rem;letter-spacing:2px}
-.g-summary .gl{font-weight:600;color:var(--encre-douce);font-size:.92rem;margin-top:2px}
-.g-summary .gl b:nth-child(1){color:#4285F4}.g-summary .gl b:nth-child(2){color:#EA4335}.g-summary .gl b:nth-child(3){color:#FBBC05}.g-summary .gl b:nth-child(4){color:#4285F4}.g-summary .gl b:nth-child(5){color:#34A853}.g-summary .gl b:nth-child(6){color:#EA4335}
-/* NOTE INTÉGRATION GOOGLE :
-   Brancher les vrais avis via l'API Google Places OU un widget
-   (Elfsight Google Reviews / Trustindex) pour afficher automatiquement
-   les commentaires laissés sur la fiche Google Business. */
-
-/* ---------- CTA finale ---------- */
-.cta{
-  margin:0 6vw 110px;border-radius:var(--radius);padding:70px 8%;text-align:center;position:relative;z-index:1;
-  background:var(--encre);color:var(--papier);
-}
-.cta h2{font-family:var(--display);font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
-.cta p{color:rgba(247,244,238,.7);max-width:480px;margin:0 auto 32px;font-size:1.05rem}
-.cta .btn-primary{background:var(--papier);color:var(--encre)}
-.cta .btn-primary:hover{background:var(--bleu);color:#fff}
-.cta .foot-note{margin-top:22px;font-size:.95rem;color:rgba(247,244,238,.7)}
-.cta .foot-note a{color:var(--papier);font-weight:700;border-bottom:1px solid rgba(247,244,238,.4)}
-
-/* ---------- Footer ---------- */
-footer{position:relative;z-index:1;padding:60px 6vw 40px;background:var(--papier-2);border-top:1px solid var(--ligne)}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto}
-.foot-grid p{color:var(--encre-douce);font-size:.92rem;margin-top:16px;max-width:320px}
-.foot-grid h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--encre-douce);margin-bottom:18px}
-.foot-grid ul{list-style:none;display:grid;gap:12px;font-size:.95rem}
-.foot-grid a{color:var(--encre);opacity:.85}.foot-grid a:hover{opacity:1;color:var(--bleu-texte)}
-.foot-bottom{max-width:1200px;margin:44px auto 0;padding-top:24px;border-top:1px solid var(--ligne);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--encre-douce);font-size:.85rem}
-
-/* ---------- Animations au scroll (restreintes) ---------- */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-
-/* ---------- Responsive ---------- */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;gap:44px}
-  .hero-visual{order:-1;max-width:420px}
-  nav ul,.nav-cta{display:none}
-  .burger{display:flex}
-  .zones-grid{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr 1fr}
-  .foot-grid{grid-template-columns:1fr;gap:30px}
-  .service-row{grid-template-columns:60px 1fr;grid-template-areas:"idx h" "p p"}
-  .service-row .index{grid-area:idx}
-  .service-row h3{grid-area:h}
-  .service-row p{grid-area:p}
-}
-@media(max-width:560px){
-  .gallery-grid{grid-template-columns:1fr}
-  .hero-stats{flex-wrap:wrap;gap:20px 0}
-  .stat{border-left:none;padding:0 20px 0 0}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .brand b{font-size:18px}.brand small{display:none}.brand img{width:40px;height:40px}
+  .hero{padding-top:24px}
+  .hero-visual{min-height:340px}
+  .hero-main{inset:0 0 50px 20px}
+  .hero-thumb{width:40%;left:0}
+  .hero-main{inset:0 0 40px 50px}
+  .hero-visual .hand{font-size:24px;max-width:150px}
+  .ads{min-height:360px}
+  .f-grid{grid-template-columns:1fr}
+  .form-card{padding:22px}
+  .terr-badges{grid-template-columns:1fr}
+  .story-photos{min-height:360px}
+  .steps{grid-template-columns:1fr}
+  .hero .ctas .btn{flex:1 1 100%;justify-content:center}
+  .hero-visual .hand{display:none}
+  #map .city text{font-size:30px}
+  #map .city.main text{font-size:34px}
+  #map .city.minor text{display:none}
+  #map .city.minor circle{r:5;opacity:.6}
 }
 </style>
 </head>
-<body>
+<body class="review">
 
-<!-- ================= NAV ================= -->
-<header id="site-header">
-  <a class="logo" href="#"><span class="dot"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50,50 L50,2 A48,48 0 0 1 91.6,74 Z" fill="#2ea44f"/><path d="M50,50 L91.6,74 A48,48 0 0 1 8.4,74 Z" fill="#1c9fd8"/><path d="M50,50 L8.4,74 A48,48 0 0 1 50,2 Z" fill="#d7332e"/><path d="M33,32 C38,38 38,43 33,47 C28,43 28,38 33,32 Z" fill="#fff"/><path d="M58,35 q4,-4 8,0 t8,0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M58,41 q4,-4 8,0 t8,0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><line x1="50" y1="58" x2="50" y2="76" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="42.5" y1="62" x2="57.5" y2="72" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="57.5" y1="62" x2="42.5" y2="72" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span><span>Climatisation <b>LOL</b></span></a>
-  <nav>
-    <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#zones">Endroits desservis</a></li>
-      <li><a href="#galerie">Réalisations</a></li>
-      <li><a href="#avis">Avis</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <a href="#contact" class="nav-cta">Soumission gratuite</a>
-  <div class="burger" aria-label="Menu"><span></span><span></span><span></span></div>
+<!-- ============ EN-TÊTE ============ -->
+<header class="header" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Climatisation LOL — accueil">
+      <img src="images/logo-icone.webp" alt="Logo Climatisation LOL" width="46" height="46">
+      <span><b>Climatisation <span>LOL</span></b><small>Confort d'aujourd'hui. Bien-être de demain.</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a class="link" href="#services">Services</a>
+      <a class="link" href="#aides">Aides financières</a>
+      <a class="link" href="#realisations">Réalisations</a>
+      <a class="link" href="#territoire">Territoire</a>
+      <a class="link" href="#avis">Avis</a>
+      <a class="btn btn-primary" href="tel:5146012546"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>514 601-2546</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="hero-inner">
-    <span class="kicker"><span class="kicker-line"></span> Thermopompes résidentielles · Réparation & installation</span>
-    <h1>Le confort chez vous, <em>à la bonne température</em> — 365&nbsp;jours par année.</h1>
-    <p class="lead">Installation et réparation de thermopompes et unités de climatisation pour votre maison. Un service rapide, propre et garanti, offert par Louis-Olivier Lorrain, un spécialiste d'ici.</p>
-    <div class="hero-actions">
-      <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView()">Obtenir ma soumission</button>
-      <a href="tel:+15146012546" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0 8.3 6.7 15 15 15l3-4-6-3-2 2c-2.5-1.2-4.3-3-5.5-5.5l2-2-3-6-4 .5Z"/></svg> 514 601-2546</a>
+<main>
+<!-- ============ 1. ACCUEIL ============ -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Votre confort, notre expertise</span>
+      <h1 id="h1">Thermopompes résidentielles</h1>
+      <div class="svc-line" aria-label="Installation, réparation, entretien">Installation <i>•</i> Réparation <i>•</i> Entretien</div>
+      <p class="intro">Nous prenons le temps de comprendre vos besoins afin de vous proposer une solution adaptée à votre maison, qu'il s'agisse d'une installation, d'un diagnostic, d'une réparation ou d'un entretien.</p>
+      <a class="pill-aide" href="#aides"><span class="leaf"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.2 3.8 21.3l1.9.7 1-2.3c.5.2 1 .3 1.3.3C19 20 22 3 22 3c-1 2-8 2.3-13 3.3S2 11.5 2 13.5s1.8 3.8 1.8 3.8C7 8 17 8 17 8z"/></svg></span>Voir les aides financières LogisVert <span aria-hidden="true">›</span></a>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contact" data-type="installation">Obtenir une soumission <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="tel:5146012546"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>514 601-2546</a>
+      </div>
+      <div class="trust">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Service local<br>sur la Rive-Nord</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Conseils honnêtes<br>et personnalisés</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5"/></svg>Un accompagnement<br>du début à la fin</div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat"><b data-count="1200">0</b><span>installations réalisées</span></div>
-      <div class="stat"><b data-count="4.9" data-dec="1">0</b><span>note moyenne Google</span></div>
-      <div class="stat"><b data-count="24">0</b><span>h — service d'urgence</span></div>
-    </div>
-  </div>
-  <div class="hero-visual reveal">
-    <div class="frame">
-      <!-- Remplacer par une vraie photo de projet (unité installée, équipe sur place) -->
-      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000&auto=format&fit=crop" alt="Installation de thermopompe résidentielle">
-      <span class="tag">Installation — Blainville</span>
+    <div class="hero-visual rv d2">
+      <div class="hero-main"><img src="images/maison-briques-thermopompe.webp" alt="Maison en briques desservie par Climatisation LOL" width="492" height="435" fetchpriority="high"></div>
+      <div class="hero-thumb"><img src="images/louis-olivier-salon-thermopompe-murale.webp" alt="Louis-Olivier devant une thermopompe murale installée dans un salon" width="397" height="376"></div>
+      <p class="hand">Des gens d'ici pour des maisons d'ici.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= BANDEAU VILLES ================= -->
-<div class="zones-band">
-  <div class="zones-band-track">
-    <div class="zones-band-group">
-      <span>Saint-Jérôme</span><span>Blainville</span><span>Mirabel</span><span>Boisbriand</span><span>Sainte-Thérèse</span><span>Terrebonne</span><span>Laval</span><span>Rosemère</span>
-    </div>
-    <div class="zones-band-group" aria-hidden="true">
-      <span>Saint-Jérôme</span><span>Blainville</span><span>Mirabel</span><span>Boisbriand</span><span>Sainte-Thérèse</span><span>Terrebonne</span><span>Laval</span><span>Rosemère</span>
+<!-- Bloc beige d'introduction (remonté du bas du site) -->
+<div class="intro-beige">
+  <div class="wrap rv">
+    <p class="hand">Un confort durable, ici, chez nous.</p>
+    <div>
+      <p>Climatisation LOL, c'est une petite entreprise de Saint-Jérôme fondée par Louis-Olivier et Cynthia. Nous accompagnons les propriétaires des Laurentides et de la Rive-Nord avec des conseils clairs et un travail soigné.</p>
+      <p class="todo">Texte exact du bloc beige à valider avec Cynthia (titre + 2 ou 3 phrases maximum).</p>
     </div>
   </div>
 </div>
 
-<!-- ================= SECTION VIDÉO ================= -->
-<section class="wrap video-band" style="padding-top:110px;padding-bottom:0">
-  <div class="video-shell reveal">
-    <!-- Remplacer le src par la vraie vidéo (drone d'une installation, équipe au travail, etc.) -->
-    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop">
-      <source src="https://cdn.coverr.co/videos/coverr-installing-an-air-conditioner-1584/1080p.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="video-caption reveal">
-    <div>
-      <h3>Une installation, du début à la fin</h3>
-      <p>Découvrez comment notre équipe installe votre thermopompe : diagnostic, pose soignée et mise en route le jour même.</p>
+<!-- ============ 2. AIDES FINANCIÈRES ============ -->
+<section class="aides" id="aides" aria-labelledby="h-aides">
+  <div class="wrap">
+    <div class="text rv">
+      <h2 class="eyebrow" id="h-aides">Aides financières et LogisVert</h2>
+      <p class="display">Votre projet pourrait être <em>admissible à une aide financière</em></p>
+      <p style="margin-top:22px">Le programme <strong>LogisVert d'Hydro-Québec</strong> offre des aides financières pour l'installation de certaines thermopompes admissibles. Le montant dépend notamment de <strong>l'équipement choisi</strong> et des critères officiels du programme.</p>
+      <p>Climatisation LOL peut vous renseigner et vous accompagner dans vos démarches. La confirmation de l'admissibilité et du montant doit toujours provenir des outils ou des règles officielles applicables.</p>
+      <div class="aide-btns">
+        <a class="aide-btn primary" href="https://www.hydroquebec.com/residentiel/mieux-consommer/logisvert/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h4" stroke-linecap="round"/></svg>
+          Vérifier mon équipement et le montant de l'aide<span class="ext">Site officiel ↗</span></a>
+        <a class="aide-btn" href="https://www.hydroquebec.com/residentiel/mieux-consommer/logisvert/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke-linecap="round"/></svg>
+          Faire ma demande LogisVert<span class="ext">Site officiel ↗</span></a>
+        <a class="aide-btn" href="https://www.hydroquebec.com/residentiel/mieux-consommer/logisvert/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 21V5l8-2v18M12 8h8v13M2 21h20M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2" stroke-linecap="round"/></svg>
+          Voir la bonification pour les multilogements<span class="ext">Site officiel ↗</span></a>
+      </div>
+      <p class="todo">Liens : vérifier les adresses exactes des 3 pages officielles LogisVert (outil de vérification, demande, multilogements).</p>
     </div>
-    <a href="#contact" class="mini-cta">Planifier mon installation →</a>
+    <div class="ads rv d2">
+      <div class="ad a1"><img src="images/pub-mitsubishi-electric.webp" alt="Publicité Mitsubishi Electric sur les subventions disponibles" width="510" height="520" loading="lazy"></div>
+      <div class="ad a2"><img src="images/pub-canair.webp" alt="Publicité Canair sur les subventions disponibles" width="454" height="491" loading="lazy"></div>
+      <p class="hand">Des solutions performantes, plus accessibles!</p>
+    </div>
+  </div>
+  <div class="wrap"><p class="todo">Publicités Mitsubishi Electric et Canair : utiliser les fichiers originaux et vérifier les montants affichés avant la mise en ligne.</p></div>
+</section>
+
+<!-- ============ 3. SERVICES ============ -->
+<section class="services" id="services" aria-labelledby="h-services">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Nos services</span>
+        <h2 class="title" id="h-services">Votre confort, notre expertise</h2>
+      </div>
+      <p class="lead" style="margin:0;max-width:520px">Installation, diagnostic, réparation et entretien de thermopompes résidentielles, avec des conseils adaptés à votre maison.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="pics"><div><img src="images/thermopompe-murale-installee.webp" alt="Thermopompe murale installée dans une pièce de séjour" loading="lazy"></div><div><img src="images/thermopompe-canair-exterieure.webp" alt="Unité extérieure de thermopompe Canair installée sur un support" loading="lazy"></div></div>
+        <div class="body">
+          <h3>Installation de thermopompe</h3>
+          <p>Installation de systèmes muraux, multizones ou centraux adaptés à votre maison, avec une mise en service soignée et des explications claires. Nous pouvons aussi remplacer un ancien appareil.</p>
+          <button class="more" data-type="installation">Demander une soumission <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </article>
+      <article class="svc rv d1">
+        <div class="pics"><div><img src="images/diagnostic-panneau.webp" alt="Louis-Olivier effectue un diagnostic électrique" loading="lazy"></div><div><img src="images/reparation-unite-exterieure.webp" alt="Réparation d'une unité extérieure de thermopompe" loading="lazy"></div></div>
+        <div class="body">
+          <h3>Diagnostic et réparation</h3>
+          <p>Votre unité ne fonctionne plus correctement? Nous trouvons la source du problème et vous expliquons la réparation recommandée avant d'intervenir.</p>
+          <button class="more" data-type="diagnostic">Planifier un diagnostic <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </article>
+      <article class="svc rv">
+        <div class="pics"><div><img src="images/entretien-serpentin.webp" alt="Serpentin de thermopompe avant nettoyage" loading="lazy"></div><div><img src="images/nettoyage-unite-murale.webp" alt="Nettoyage d'une unité murale avec housse de protection" loading="lazy"></div></div>
+        <div class="body">
+          <h3>Entretien et nettoyage</h3>
+          <p>Nous effectuons le nettoyage et les vérifications utiles selon l'état de l'équipement et les recommandations du fabricant.</p>
+          <button class="more" data-type="entretien">Demander un entretien <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </article>
+      <article class="svc rv d1">
+        <div class="pics one"><div><img src="images/echangeur-air-hero.webp" alt="Échangeur d'air résidentiel installé au sous-sol" loading="lazy"></div></div>
+        <div class="body">
+          <h3>Échangeurs d'air</h3>
+          <p>Diagnostic, réparation et entretien d'échangeurs d'air résidentiels.</p>
+          <button class="more" data-type="echangeur">Nous écrire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
-<section class="wrap" id="services">
-  <div class="sec-head reveal">
-    <span class="sec-tag">Nos services</span>
-    <h2>Deux spécialités, faites au quart de tour</h2>
-    <p>On se concentre sur ce qu'on fait le mieux : les thermopompes et la climatisation résidentielle. Rien de plus, rien de moins.</p>
-  </div>
-  <div class="services-list">
-    <div class="service-row reveal">
-      <span class="index">01</span>
-      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4l-3.3 3.3-2-2 3.3-3.3Z"/></svg> Installation de thermopompe</h3>
-      <div>
-        <p>Pose complète d'unités murales et centrales, dimensionnées pour votre maison. Travail propre, mise en route le jour même et explications claires.</p>
-        <div class="price">Soumission gratuite en 24 h</div>
+<!-- ============ 4. RÉALISATIONS ============ -->
+<section class="real" id="realisations" aria-labelledby="h-real">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Réalisations</span>
+      <h2 class="title" id="h-real">Nos réalisations</h2>
+    </div>
+    <div class="steps rv">
+      <div class="col">
+        <button class="shot" data-i="0"><img src="images/installation-etape-1-preparation.webp" alt="Préparation de l'unité murale avant l'installation" loading="lazy"><span class="cap"><b>Étape 1</b>Préparation de l'unité murale</span></button>
+        <button class="shot" data-i="1"><img src="images/installation-etape-2-exterieur.webp" alt="Unité extérieure installée sur un mur de briques" loading="lazy"><span class="cap"><b>Étape 2</b>Pose de l'unité extérieure</span></button>
+      </div>
+      <button class="shot big" data-i="2"><img src="images/installation-etape-3-resultat-salon.webp" alt="Thermopompe murale installée dans un salon" loading="lazy"><span class="cap"><b>Résultat</b>Thermopompe murale en fonction dans le salon</span></button>
+      <div class="col">
+        <button class="shot" data-i="3" style="aspect-ratio:auto;height:100%"><img src="images/installation-etape-2-mur-briques.webp" alt="Vue d'ensemble de l'unité extérieure fixée au mur de briques" loading="lazy"><span class="cap"><b>Résultat</b>Unité extérieure fixée au mur</span></button>
       </div>
     </div>
-    <div class="service-row reveal">
-      <span class="index">02</span>
-      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg> Réparation & dépannage</h3>
+    <p class="todo">Légendes : ajouter la ville et le type d'installation réels. Remplacer l'étape 2 par la photo du projet terminé si disponible.</p>
+    <div class="foot rv">
       <div>
-        <p>Votre unité ne refroidit plus ou fait du bruit ? On diagnostique rapidement et on répare la plupart des marques, souvent dès la première visite.</p>
-        <div class="price">Service d'urgence disponible</div>
+        <h3>Une installation, du début à la fin</h3>
+        <p>Nous vous accompagnons à chaque étape : choix de l'équipement, installation soignée, mise en service et explications sur le fonctionnement de votre nouvelle thermopompe.</p>
+      </div>
+      <a class="btn btn-outline" href="#contact" data-type="installation">Planifier mon installation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. TERRITOIRE ============ -->
+<section class="terr" id="territoire" aria-labelledby="h-terr">
+  <div class="wrap">
+    <div class="terr-left">
+      <div class="rv">
+        <span class="eyebrow">Notre territoire</span>
+        <h2 class="title" id="h-terr">Au service des Laurentides et des environs</h2>
+        <p style="margin-top:18px">Basée à Saint-Jérôme, Climatisation LOL dessert les propriétaires de plusieurs secteurs de la Rive-Nord et des Laurentides, notamment Mirabel, Blainville, Sainte-Thérèse, Boisbriand, Rosemère, Saint-Sauveur, Sainte-Agathe-des-Monts, Lachute, Saint-André-d'Argenteuil, Saint-Donat et Mont-Tremblant.</p>
+        <p>Vous ne voyez pas votre municipalité? Écrivez-nous, nous vous dirons si nous pouvons nous déplacer chez vous.</p>
+        <a class="btn btn-primary" href="#contact" data-type="installation">Obtenir une soumission <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p class="hand" style="margin-top:22px;transform:rotate(-3deg)">Une équipe locale, près de chez vous!</p>
       </div>
     </div>
-    <div class="service-row reveal">
-      <span class="index">03</span>
-      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M4.5 6 19.5 18M19.5 6 4.5 18M7 9l-3-1M7 15l-3 1M17 9l3-1M17 15l3 1"/></svg> Entretien saisonnier</h3>
-      <div>
-        <p>Nettoyage, vérification et optimisation deux fois par an pour prolonger la vie de votre appareil et garder une facture d'énergie basse.</p>
-        <div class="price">Forfaits annuels avantageux</div>
+    <div class="mapcard rv d2">
+      <div class="mh">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        <div><b>Notre zone de service</b><span>Saint-Jérôme au cœur du territoire</span></div>
+      </div>
+      <svg id="map" viewBox="0 0 900 860" role="img" aria-label="Carte de la zone desservie autour de Saint-Jérôme">
+        <defs>
+          <radialGradient id="zone" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#cfe2ff"/><stop offset="1" stop-color="#e6f0ff"/></radialGradient>
+        </defs>
+        <!-- Rivières (schématiques) -->
+        <path d="M0 640 C120 620 200 660 300 690 S470 740 560 790 S700 840 900 820" fill="none" stroke="#bcd6f5" stroke-width="30" stroke-linecap="round"/>
+        <path d="M560 790 C620 760 700 720 780 700 S880 680 900 690" fill="none" stroke="#bcd6f5" stroke-width="16" stroke-linecap="round"/>
+        <!-- Zone desservie -->
+        <path id="zonePath" d="M90 140 C170 40 420 10 560 60 C690 110 780 230 830 330 C870 410 860 520 820 600 C780 680 650 760 520 790 C400 815 250 790 150 720 C40 640 20 520 40 400 C55 290 50 200 90 140 Z" fill="url(#zone)" stroke="#0b5fd6" stroke-width="2.5" stroke-dasharray="8 8"/>
+        <!-- Autoroutes -->
+        <path d="M430 540 L320 420 L250 250 L95 125" fill="none" stroke="#fff" stroke-width="6" opacity=".9"/>
+        <path d="M430 540 L470 640 L500 790" fill="none" stroke="#fff" stroke-width="6" opacity=".9"/>
+        <g font-family="Plus Jakarta Sans" font-size="13" font-weight="700" fill="#fff">
+          <rect x="365" y="500" width="30" height="22" rx="6" fill="#5a86c9"/><text x="380" y="516" text-anchor="middle">15</text>
+          <rect x="143" y="180" width="38" height="22" rx="6" fill="#5a86c9"/><text x="162" y="196" text-anchor="middle">117</text>
+          <rect x="240" y="665" width="30" height="22" rx="6" fill="#5a86c9"/><text x="255" y="681" text-anchor="middle">50</text>
+        </g>
+        <text x="830" y="60" font-family="Plus Jakarta Sans" font-size="20" font-weight="800" fill="#5a86c9" text-anchor="middle">N</text>
+        <path d="M830 20 l-9 18 h18z" fill="#5a86c9"/>
+        <g id="cities"></g>
+      </svg>
+      <div class="map-tip" id="mapTip" aria-live="polite">Survolez ou touchez une ville</div>
+      <div class="terr-badges">
+        <div><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Service local et personnalisé</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Basés à Saint-Jérôme</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5"/></svg>Des gens d'ici pour des gens d'ici</div>
+      </div>
+      <p class="todo">Carte schématique. Joliette et Grenville (points orange) : couverture exacte à confirmer avant de les afficher.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. HISTOIRE ============ -->
+<section class="story" id="histoire" aria-labelledby="h-story">
+  <div class="wrap">
+    <div class="story-photos rv">
+      <div class="p1"><img src="images/louis-olivier-echelle.webp" alt="Louis-Olivier Lorrain au travail" loading="lazy"></div>
+      <div class="p2"><img src="images/camion-climatisation-lol.webp" alt="Camion de service Climatisation LOL" loading="lazy"></div>
+    </div>
+    <div class="rv d1">
+      <span class="eyebrow" style="color:#8a5a2b">Qui sommes-nous</span>
+      <h2 class="title" id="h-story">Notre expérience, nos forces réunies</h2>
+      <p style="margin-top:20px">Louis-Olivier apporte son expérience technique acquise sur le terrain dans l'installation, le diagnostic et la réparation de systèmes de climatisation, de chauffage et de réfrigération. Son approche repose sur l'observation, la recherche de la cause et des explications claires.</p>
+      <p>Cynthia met à profit son expérience en service à la clientèle et en coordination de services techniques. Elle assure le suivi des demandes, la préparation des dossiers et l'accompagnement administratif des clients.</p>
+      <p>Ensemble, nous prenons le temps d'écouter, de poser les bonnes questions et de proposer une solution adaptée à la maison et aux besoins du client.</p>
+      <div class="people">
+        <span><b>Louis-Olivier Lorrain</b>Copropriétaire · volet technique</span>
+        <span><b>Cynthia Filion</b>Copropriétaire · suivi et accompagnement</span>
+      </div>
+      <p class="todo">Photo naturelle de Cynthia et Louis-Olivier à fournir. Confirmer les années d'expérience et si l'origine du nom LOL doit être racontée.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. MARQUES ET GARANTIES (visible en mode révision seulement) ============ -->
+<section class="brands pending-only" id="marques" aria-label="Marques et garanties">
+  <div class="wrap">
+    <span class="eyebrow">Marques et garanties</span>
+    <p class="todo">Section masquée sur le site public tant que les marques, garanties et durées ne sont pas validées.</p>
+    <div class="brand-row">
+      <div>Marque 1 — logo et garantie à valider</div>
+      <div>Marque 2 — logo et garantie à valider</div>
+      <div>Marque 3 — logo et garantie à valider</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. AVIS GOOGLE ============ -->
+<section class="reviews" id="avis" aria-labelledby="h-avis">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Avis Google</span>
+      <h2 class="title" id="h-avis">Ce que l'on dit de nous</h2>
+      <p style="margin-top:18px">Vos commentaires nous aident à nous améliorer et permettent à d'autres propriétaires de nous découvrir. Merci à tous les clients qui prennent le temps de partager leur expérience.</p>
+    </div>
+    <div class="g-card rv d2">
+      <div class="g"><svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Avis de nos clients</div>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <div class="slot">Emplacement du module d'avis Google (avis authentiques importés automatiquement de la fiche d'établissement).</div>
+      <div class="row">
+        <a class="btn btn-primary" href="#" data-todo="google-reviews">Lire nos avis sur Google</a>
+        <a class="btn btn-ghost" href="#" data-todo="google-write">Laisser un avis</a>
+      </div>
+      <p class="todo">Ajouter le lien de la fiche Google et un module d'avis (ex. extension WordPress). Ne jamais inscrire d'avis rédigés à la main.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. CONTACT ============ -->
+<section class="contact" id="contact" aria-labelledby="h-contact">
+  <div class="wrap">
+    <div class="side rv">
+      <span class="eyebrow">Contact</span>
+      <h2 class="title" id="h-contact">Parlons de votre projet</h2>
+      <p style="margin-top:18px">Décrivez-nous votre besoin en quelques lignes. Cynthia prendra connaissance de votre demande et communiquera avec vous pour discuter des prochaines étapes.</p>
+      <div class="c-info">
+        <a href="tel:5146012546"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span>Appelez-nous au 514 601-2546<small>Cynthia ou Louis-Olivier</small></span></a>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Heures de bureau<small>Du lundi au vendredi, de 7 h à 16 h</small></span></div>
+        <div><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>Saint-Jérôme<small>Rive-Nord et Laurentides</small></span></div>
+      </div>
+    </div>
+
+    <div class="form-card rv d1">
+      <form id="form" novalidate>
+        <fieldset>
+          <legend>Type de demande</legend>
+          <div class="types" id="types">
+            <label><input type="radio" name="type" value="installation"><span>Installation ou soumission</span></label>
+            <label><input type="radio" name="type" value="diagnostic"><span>Diagnostic ou réparation</span></label>
+            <label><input type="radio" name="type" value="entretien"><span>Entretien ou nettoyage</span></label>
+            <label><input type="radio" name="type" value="echangeur"><span>Échangeur d'air</span></label>
+            <label><input type="radio" name="type" value="autre"><span>Autre demande</span></label>
+          </div>
+        </fieldset>
+
+        <div class="reveal-fields" id="fields">
+          <!-- Question propriétaire : seulement pour une installation -->
+          <div class="ctx" id="ctxOwner">
+            <div class="q">Êtes-vous propriétaire de la résidence?</div>
+            <div class="radios">
+              <label><input type="radio" name="proprio" value="oui"> Oui</label>
+              <label><input type="radio" name="proprio" value="non"> Non, je suis locataire</label>
+            </div>
+            <p class="note" id="noteTenant">Aucun problème. Certaines demandes peuvent être faites avec l'autorisation du propriétaire. Précisez-le dans la description.</p>
+            <label style="display:flex;gap:8px;align-items:center;margin-top:12px;font-size:15px;cursor:pointer"><input type="checkbox" name="infoAide"> J'aimerais des renseignements sur les aides financières</label>
+          </div>
+          <p class="ctx-hint" id="hint"></p>
+
+          <div class="f-grid">
+            <div class="field"><label for="nom">Nom et prénom</label><input id="nom" name="nom" autocomplete="name" required><div class="msg">Veuillez indiquer votre nom.</div></div>
+            <div class="field"><label for="tel">Numéro de téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required><div class="msg">Veuillez indiquer un numéro valide.</div></div>
+            <div class="field full"><label for="courriel">Adresse courriel</label><input id="courriel" name="courriel" type="email" autocomplete="email" required><div class="msg">Veuillez indiquer une adresse courriel valide.</div></div>
+            <div class="field"><label for="ville">Ville</label><input id="ville" name="ville" autocomplete="address-level2" list="villes" required><div class="msg">Veuillez indiquer votre ville.</div></div>
+            <div class="field"><label for="cp">Code postal</label><input id="cp" name="cp" autocomplete="postal-code" maxlength="7" required><div class="msg">Format attendu : J7Z 1A1</div></div>
+            <div class="field full"><label for="desc" id="descLabel">Courte description du besoin</label><textarea id="desc" name="desc" required></textarea><div class="msg">Décrivez brièvement votre besoin.</div></div>
+            <div class="field full">
+              <span class="f-label" style="font-size:14px;margin-bottom:6px">Photos <span style="color:var(--muted);font-weight:500">(facultatif)</span></span>
+              <label class="drop" id="drop"><input type="file" id="photos" name="photos" accept="image/*" multiple>📷 Ajoutez des photos si cela aide à comprendre le projet (appareil, emplacement, plaque signalétique)</label>
+              <div class="thumbs" id="thumbs"></div>
+            </div>
+          </div>
+          <datalist id="villes"></datalist>
+          <p class="privacy">Les renseignements transmis servent uniquement à traiter votre demande. <a href="#" data-todo="privacy">Politique de confidentialité</a></p>
+          <p class="todo">Texte final de confidentialité à valider avec Cynthia. Brancher l'envoi (WPForms / Gravity Forms / Formspree) et le courriel automatique.</p>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Envoyer ma demande <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <span class="alt">ou appelez au <a href="tel:5146012546">514 601-2546</a></span>
+          </div>
+        </div>
+        <p class="ctx-hint show" id="pickFirst" style="margin:0">Choisissez d'abord le type de demande pour afficher les questions pertinentes.</p>
+      </form>
+
+      <div class="thanks" id="thanks" role="status" tabindex="-1">
+        <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3>Merci! Votre demande a bien été reçue.</h3>
+        <p>Nous prendrons connaissance des renseignements transmis afin de bien comprendre vos besoins.</p>
+        <p>Vous préférez nous parler directement? Vous pouvez nous joindre au <a href="tel:5146012546">514 601-2546</a> pour discuter de votre demande, poser vos questions ou planifier la prochaine étape.</p>
+        <p>Un courriel de confirmation vous sera envoyé. S'il n'apparaît pas dans votre boîte de réception, pensez à vérifier votre dossier de courriels indésirables.</p>
+        <button class="btn btn-ghost" id="again" type="button">Faire une autre demande</button>
       </div>
     </div>
   </div>
 </section>
+</main>
 
-<!-- ================= CTA INTERMÉDIAIRE ================= -->
-<div class="mid-cta reveal">
-  <p>Une question sur votre projet ? <a href="tel:+15146012546">514 601-2546</a></p>
-  <a href="#contact" class="btn btn-ghost">Obtenir une soumission →</a>
-</div>
-
-<!-- ================= ENDROITS DESSERVIS ================= -->
-<section class="wrap" id="zones">
-  <div class="sec-head reveal">
-    <span class="sec-tag">Endroits desservis</span>
-    <h2>On roule jusque chez vous</h2>
-  </div>
-  <div class="zones-grid">
-    <div class="zones-map reveal">
-      <svg viewBox="0 0 200 150" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 90 Q40 40 90 50 T170 30 Q190 60 160 100 Q120 140 70 130 Q20 130 10 90Z"/></svg>
-      <div class="pin" style="top:35%;left:40%"></div>
-      <div class="pin" style="top:55%;left:62%"></div>
-      <div class="pin" style="top:48%;left:28%"></div>
-      <span class="label">Laurentides &amp; Rive-Nord</span>
-    </div>
-    <ul class="zones-list reveal">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg> Saint-Jérôme</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg> Blainville</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg> Mirabel</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg> Boisbriand</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg> Sainte-Thérèse</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg> Terrebonne</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg> Laval</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg> Rosemère</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= GALERIE FACEBOOK ================= -->
-<section class="wrap" id="galerie">
-  <div class="fb-head reveal">
-    <div class="sec-head" style="margin-bottom:0">
-      <span class="sec-tag">Nos réalisations</span>
-      <h2>Directement de notre page Facebook</h2>
-    </div>
-    <span class="fb-badge"><span class="fbico">f</span> @ClimatisationLOL · mise à jour automatique</span>
-  </div>
-  <!-- DÉMO : à remplacer par le fil réel (Smash Balloon / Elfsight) -->
-  <div class="gallery-grid reveal">
-    <figure><div class="imgwrap"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Installation murale"></div><figcaption>Installation murale — Blainville</figcaption></figure>
-    <figure><div class="imgwrap"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop" alt="Équipe au travail"></div><figcaption>Notre équipe en action</figcaption></figure>
-    <figure><div class="imgwrap"><img src="https://images.unsplash.com/photo-1635048424329-a9bfb146d7aa?q=80&w=800&auto=format&fit=crop" alt="Unité extérieure"></div><figcaption>Unité extérieure — Terrebonne</figcaption></figure>
-    <figure><div class="imgwrap"><img src="https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?q=80&w=800&auto=format&fit=crop" alt="Thermopompe résidentielle"></div><figcaption>Thermopompe centrale</figcaption></figure>
-    <figure><div class="imgwrap"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop" alt="Maison confortable"></div><figcaption>Confort garanti toute l'année</figcaption></figure>
-    <figure><div class="imgwrap"><img src="https://images.unsplash.com/photo-1596079890744-c1a0462d0975?q=80&w=800&auto=format&fit=crop" alt="Entretien"></div><figcaption>Entretien saisonnier</figcaption></figure>
-  </div>
-</section>
-
-<!-- ================= AVIS GOOGLE ================= -->
-<section class="wrap" id="avis">
-  <div class="sec-head reveal">
-    <span class="sec-tag">Avis clients</span>
-    <h2>Ce que le monde dit de nous</h2>
-  </div>
-  <div class="g-summary reveal">
-    <div class="score">4,9</div>
-    <div>
-      <div class="stars">★★★★★</div>
-      <div class="gl"><b>G</b><b>o</b><b>o</b><b>g</b><b>l</b><b>e</b> · plus de 180 avis vérifiés</div>
-    </div>
-  </div>
-  <!-- DÉMO : à remplacer par les vrais avis (API Google Places / widget Trustindex) -->
-  <div class="reviews-grid">
-    <div class="review reveal">
-      <div class="quote-mark">”</div>
-      <p>Installation de notre thermopompe faite en une seule journée. Propre, courtois et le prix était exactement celui de la soumission. Je recommande à 100 %.</p>
-      <div class="who"><span class="av">M</span><div><b>Marie-Claude L.</b><span>Saint-Jérôme</span></div></div>
-    </div>
-    <div class="review reveal">
-      <div class="quote-mark">”</div>
-      <p>Notre climatiseur est tombé en panne en pleine canicule. Ils sont venus le lendemain matin et l'ont réparé sur place. Service d'urgence au top.</p>
-      <div class="who"><span class="av">P</span><div><b>Patrick G.</b><span>Terrebonne</span></div></div>
-    </div>
-    <div class="review reveal">
-      <div class="quote-mark">”</div>
-      <p>Enfin une compagnie qui explique clairement ce qu'elle fait. Aucune surprise sur la facture. On a même baissé notre facture d'électricité.</p>
-      <div class="who"><span class="av">S</span><div><b>Sophie B.</b><span>Blainville</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="cta reveal" id="contact">
-  <h2>Prêt à respirer un air confortable ?</h2>
-  <p>Obtenez une soumission gratuite en 24 h. Aucun engagement, juste un prix clair.</p>
-  <button class="btn btn-primary">Demander ma soumission gratuite</button>
-  <p class="foot-note">ou parlez directement à Louis-Olivier : <a href="tel:+15146012546">514 601-2546</a></p>
-</section>
-
-<!-- ================= FOOTER ================= -->
+<!-- ============ PIED DE PAGE ============ -->
 <footer>
-  <div class="foot-grid">
-    <div>
-      <a class="logo" href="#"><span class="dot"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50,50 L50,2 A48,48 0 0 1 91.6,74 Z" fill="#2ea44f"/><path d="M50,50 L91.6,74 A48,48 0 0 1 8.4,74 Z" fill="#1c9fd8"/><path d="M50,50 L8.4,74 A48,48 0 0 1 50,2 Z" fill="#d7332e"/><path d="M33,32 C38,38 38,43 33,47 C28,43 28,38 33,32 Z" fill="#fff"/><path d="M58,35 q4,-4 8,0 t8,0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M58,41 q4,-4 8,0 t8,0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><line x1="50" y1="58" x2="50" y2="76" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="42.5" y1="62" x2="57.5" y2="72" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="57.5" y1="62" x2="42.5" y2="72" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span><span>Climatisation <b>LOL</b></span></a>
-      <p>Spécialistes de la thermopompe et de la climatisation résidentielle. Réparation, installation et entretien dans les Basses-Laurentides et la Rive-Nord. Service personnalisé par Louis-Olivier Lorrain.</p>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a class="brand" href="#top"><img src="images/logo-icone.webp" alt="" width="46" height="46"><span><b>Climatisation <span style="color:#7fb2ff">LOL</span> inc.</b><small>Thermopompes résidentielles</small></span></a>
+        <p style="margin-top:18px">Saint-Jérôme, Rive-Nord et Laurentides</p>
+        <p>Licence RBQ : 5866-8260-01</p>
+        <p class="todo" style="color:#9a3412">Numéro RBQ à confirmer une dernière fois. Aucun logo d'association sans confirmation.</p>
+      </div>
+      <div>
+        <b class="t">Nous joindre</b>
+        <ul>
+          <li><a href="tel:5146012546">514 601-2546</a></li>
+          <li><a href="mailto:info@climatisationlol.com" data-todo="email">info@climatisationlol.com</a></li>
+          <li>Lundi au vendredi, 7 h à 16 h</li>
+          <li><a href="#" data-todo="facebook" rel="noopener">Facebook</a></li>
+        </ul>
+        <p class="todo" style="color:#9a3412">Adresse courriel officielle et lien Facebook à confirmer.</p>
+      </div>
+      <div>
+        <b class="t">Liens</b>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#aides">Aides financières</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#avis">Avis</a></li>
+          <li><a href="#" data-todo="privacy">Politique de confidentialité</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#zones">Endroits desservis</a></li>
-        <li><a href="#galerie">Réalisations</a></li>
-        <li><a href="#avis">Avis</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Nous joindre</h4>
-      <ul>
-        <li><a href="tel:+15146012546">514 601-2546</a></li>
-        <li><a href="mailto:info@climatisationlol.ca">info@climatisationlol.ca</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Google</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    <span>© 2026 Climatisation LOL. Tous droits réservés. RBQ : 0000-0000-00</span>
-    <span>Chauffage &amp; climatisation dans les Laurentides</span>
+    <div class="legal"><span>© <span id="yr"></span> Climatisation LOL inc.</span><span>climatisationlol.com</span></div>
   </div>
 </footer>
 
-<!-- ================= BARRE CTA FIXE (mobile) ================= -->
-<div class="mobile-cta-bar">
-  <a href="tel:+15146012546" class="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 8.3 6.7 15 15 15l3-4-6-3-2 2c-2.5-1.2-4.3-3-5.5-5.5l2-2-3-6-4 .5Z"/></svg> Appeler</a>
-  <a href="#contact" class="quote">Soumission gratuite</a>
+<!-- Barre d'appel mobile (ne cache aucun contenu : le body a un padding-bottom) -->
+<div class="callbar" id="callbar">
+  <a class="btn btn-primary" href="tel:5146012546"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Appeler</a>
+  <a class="btn btn-ghost" href="#contact" data-type="installation">Soumission</a>
 </div>
 
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="x" id="lbX" aria-label="Fermer">✕</button>
+  <button class="prev" id="lbP" aria-label="Photo précédente">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="next" id="lbN" aria-label="Photo suivante">›</button>
+</div>
+
+<!-- Mode révision : affiche les éléments à confirmer. Retirer avant la mise en ligne. -->
+<button class="review-toggle" id="reviewToggle" type="button" aria-pressed="true"><span class="sw"></span>Mode révision</button>
+
 <script>
-/* Nav : ombre légère au scroll */
-const header=document.getElementById('site-header');
-addEventListener('scroll',()=>header.style.boxShadow=scrollY>10?'0 1px 0 rgba(24,26,30,.06)':'none');
+(() => {
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  $('#yr').textContent = new Date().getFullYear();
 
-/* Reveal au scroll (restreint : un seul style d'entrée) */
-const io=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* Compteurs (une seule fois, sobres) */
-const counters=document.querySelectorAll('[data-count]');
-const cio=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(!e.isIntersecting)return;
-    const el=e.target,target=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||0);
-    let n=0;const step=target/40;
-    const t=setInterval(()=>{
-      n+=step;
-      if(n>=target){n=target;clearInterval(t)}
-      el.textContent=dec?n.toFixed(dec).replace('.',','):Math.floor(n).toLocaleString('fr-CA')+(target>=1000?'+':'');
-    },25);
-    cio.unobserve(el);
+  /* --- En-tête + menu mobile --- */
+  const header = $('.header'), nav = $('#nav'), burger = $('#burger');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), { passive: true });
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
   });
-},{threshold:.5});
-counters.forEach(c=>cio.observe(c));
+  $$('#nav a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); }));
 
-/* Menu burger */
-document.querySelector('.burger').addEventListener('click',()=>{
-  const n=document.querySelector('nav ul');
-  const open=n.style.display==='flex';
-  n.style.display=open?'':'flex';
-  Object.assign(n.style,open?{}:{position:'fixed',top:'68px',right:'6vw',flexDirection:'column',background:'var(--papier)',padding:'20px',borderRadius:'10px',gap:'18px',border:'1px solid var(--ligne)'});
-});
+  /* --- Lien actif dans le menu --- */
+  const links = $$('#nav a.link');
+  const spy = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  ['services','aides','realisations','territoire','avis','contact','histoire'].forEach(id => { const el = document.getElementById(id); el && spy.observe(el); });
+
+  /* --- Apparition au défilement --- */
+  const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } }), { threshold: .12 });
+  $$('.rv').forEach(el => rv.observe(el));
+
+  /* --- Mode révision --- */
+  const rt = $('#reviewToggle');
+  rt.addEventListener('click', () => { const on = document.body.classList.toggle('review'); rt.setAttribute('aria-pressed', on); });
+  $$('[data-todo]').forEach(a => a.addEventListener('click', e => { if (a.getAttribute('href') === '#') e.preventDefault(); }));
+
+  /* --- Carte du territoire --- */
+  const cities = [
+    ['Saint-Jérôme', 430, 540, 'main'], ['Mirabel', 358, 637], ['Blainville', 457, 645], ['Sainte-Thérèse', 497, 695],
+    ['Boisbriand', 497, 732], ['Rosemère', 548, 717], ['Prévost', 387, 447], ['Sainte-Sophie', 486, 494],
+    ['Saint-Hippolyte', 437, 412], ['Sainte-Adèle', 320, 360], ['Saint-Sauveur', 280, 427], ['Morin-Heights', 210, 400],
+    ['Sainte-Agathe-des-Monts', 250, 258], ['Saint-Adolphe-d\'Howard', 105, 325], ['Mont-Tremblant', 93, 123],
+    ['Saint-Donat', 310, 42], ['Entrelacs', 440, 198], ['Sainte-Julienne', 613, 378], ['Saint-Lin–Laurentides', 715, 563],
+    ['Sainte-Anne-des-Plaines', 622, 582], ['Lachute', 190, 622], ['Saint-André-d\'Argenteuil', 60, 608],
+    ['Grenville', 40, 540, 'tbc'], ['Joliette', 815, 300, 'tbc']
+  ];
+  const g = $('#cities'), tip = $('#mapTip'), NS = 'http://www.w3.org/2000/svg';
+  const labelSide = { 'Mont-Tremblant':1, 'Saint-Donat':1, 'Lachute':1, 'Prévost':1, 'Saint-Hippolyte':1, 'Sainte-Adèle':1, 'Sainte-Sophie':1, 'Sainte-Julienne':1, 'Blainville':1, 'Rosemère':1, 'Entrelacs':1, 'Saint-Jérôme':1 };
+  cities.forEach(([name, x, y, cls]) => {
+    const el = document.createElementNS(NS, 'g'); el.setAttribute('class', 'city' + (cls ? ' ' + cls : ''));
+    el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button'); el.setAttribute('aria-label', name);
+    const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', cls === 'main' ? 11 : 7);
+    const t = document.createElementNS(NS, 'text');
+    const right = labelSide[name] || x < 300;
+    t.setAttribute('x', right ? x + 14 : x - 14); t.setAttribute('y', y + 7); t.setAttribute('text-anchor', right ? 'start' : 'end');
+    if (x > 700 && !cls) { t.setAttribute('x', x - 12); t.setAttribute('text-anchor', 'end'); }
+    const ov = { 'Saint-Sauveur':['end',-14,7], 'Morin-Heights':['end',-14,7], 'Saint-André-d\'Argenteuil':['start',-20,36], 'Mirabel':['middle',0,32], 'Saint-Lin–Laurentides':['start',-40,-16], 'Lachute':['middle',0,-16], 'Prévost':['start',14,7] }[name];
+    if (ov) { t.setAttribute('text-anchor', ov[0]); t.setAttribute('x', x + ov[1]); t.setAttribute('y', y + ov[2]); }
+    if (name === 'Joliette') { t.setAttribute('x', x); t.setAttribute('y', y - 18); t.setAttribute('text-anchor', 'middle'); }
+    if (name === 'Grenville') { t.setAttribute('x', x - 6); t.setAttribute('y', y - 16); t.setAttribute('text-anchor', 'start'); }
+    t.textContent = name.length > 18 && cls !== 'main' ? name.replace('Sainte-', 'Ste-').replace('Saint-', 'St-') : name;
+    const listed = ['Saint-Jérôme','Mirabel','Blainville','Sainte-Thérèse','Boisbriand','Rosemère','Saint-Sauveur','Sainte-Agathe-des-Monts','Lachute','Saint-André-d\'Argenteuil','Saint-Donat','Mont-Tremblant'];
+    if (!listed.includes(name) && !cls) el.classList.add('minor');
+    el.append(c, t); g.append(el);
+    if (cls === 'tbc') el.classList.add('pending-svg');
+    const show = () => {
+      $$('.city', g).forEach(n => n.classList.remove('on')); el.classList.add('on');
+      tip.textContent = cls === 'main' ? 'Saint-Jérôme — notre port d\'attache' : cls === 'tbc' ? name + ' — couverture à confirmer' : name + ' — secteur desservi';
+    };
+    el.addEventListener('mouseenter', show); el.addEventListener('focus', show); el.addEventListener('click', show);
+  });
+  // Points « à confirmer » visibles seulement en mode révision
+  const syncTbc = () => $$('.pending-svg').forEach(n => n.style.display = document.body.classList.contains('review') ? '' : 'none');
+  syncTbc(); rt.addEventListener('click', syncTbc);
+  $('#villes').innerHTML = cities.filter(c => c[3] !== 'tbc').map(c => `<option value="${c[0]}">`).join('');
+
+  /* --- Lightbox Réalisations --- */
+  const shots = $$('.shot'); let cur = 0;
+  const lb = $('#lb'), lbImg = $('#lbImg'), lbCap = $('#lbCap');
+  const openLb = i => { cur = (i + shots.length) % shots.length; const s = shots[cur]; lbImg.src = s.querySelector('img').src; lbImg.alt = s.querySelector('img').alt; lbCap.textContent = s.querySelector('.cap').innerText.replace('\n', ' · '); lb.classList.add('open'); $('#lbX').focus(); };
+  const closeLb = () => { lb.classList.remove('open'); shots[cur].focus(); };
+  shots.forEach((s, i) => s.addEventListener('click', () => openLb(i)));
+  $('#lbX').onclick = closeLb; $('#lbP').onclick = () => openLb(cur - 1); $('#lbN').onclick = () => openLb(cur + 1);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  addEventListener('keydown', e => { if (!lb.classList.contains('open')) return; if (e.key === 'Escape') closeLb(); if (e.key === 'ArrowLeft') openLb(cur - 1); if (e.key === 'ArrowRight') openLb(cur + 1); });
+
+  /* --- Formulaire dynamique --- */
+  const form = $('#form'), fields = $('#fields'), ctxOwner = $('#ctxOwner'), hint = $('#hint'), pickFirst = $('#pickFirst');
+  const descLabel = $('#descLabel'), desc = $('#desc');
+  const cfg = {
+    installation: { owner: true, label: 'Courte description du projet', ph: 'Ex. : maison à étages, chauffage actuel au mazout, nous aimerions climatiser le rez-de-chaussée et l\'étage.', hint: '' },
+    diagnostic:   { owner: false, label: 'Que se passe-t-il avec votre appareil?', ph: 'Ex. : l\'unité murale ne chauffe plus et affiche un code d\'erreur. Marque et âge approximatif si connus.', hint: 'Une photo de l\'appareil ou du code d\'erreur peut nous aider à préparer le diagnostic.' },
+    entretien:    { owner: false, label: 'Votre équipement à entretenir', ph: 'Ex. : 2 unités murales et 1 unité extérieure, dernier entretien il y a 2 ans.', hint: '' },
+    echangeur:    { owner: false, label: 'Votre besoin pour l\'échangeur d\'air', ph: 'Ex. : bruit inhabituel, entretien annuel, marque de l\'appareil…', hint: '' },
+    autre:        { owner: false, label: 'Votre demande', ph: 'Décrivez-nous brièvement votre demande.', hint: '' }
+  };
+  const setType = (type, scroll) => {
+    const r = form.querySelector(`input[name=type][value="${type}"]`); if (!r) return;
+    r.checked = true; apply(type);
+    if (scroll) $('#contact').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  };
+  const apply = type => {
+    const c = cfg[type];
+    fields.classList.add('show'); pickFirst.classList.remove('show');
+    ctxOwner.classList.toggle('show', c.owner);
+    descLabel.textContent = c.label; desc.placeholder = c.ph;
+    hint.textContent = c.hint; hint.classList.toggle('show', !!c.hint);
+  };
+  $$('input[name=type]').forEach(r => r.addEventListener('change', () => apply(r.value)));
+  $$('input[name=proprio]').forEach(r => r.addEventListener('change', () => $('#noteTenant').classList.toggle('show', r.value === 'non' && r.checked)));
+  $$('[data-type]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); setType(b.dataset.type, true); }));
+
+  // Code postal : mise en forme automatique
+  $('#cp').addEventListener('input', e => {
+    let v = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+    e.target.value = v.length > 3 ? v.slice(0, 3) + ' ' + v.slice(3) : v;
+  });
+  // Téléphone : mise en forme 514 601-2546
+  $('#tel').addEventListener('input', e => {
+    const d = e.target.value.replace(/\D/g, '').replace(/^1/, '').slice(0, 10);
+    e.target.value = d.length > 6 ? `${d.slice(0,3)} ${d.slice(3,6)}-${d.slice(6)}` : d.length > 3 ? `${d.slice(0,3)} ${d.slice(3)}` : d;
+  });
+
+  // Photos facultatives avec aperçu
+  const drop = $('#drop'), input = $('#photos'), thumbs = $('#thumbs'); let files = [];
+  const render = () => { thumbs.innerHTML = ''; files.forEach((f, i) => { const d = document.createElement('div'); const im = document.createElement('img'); im.src = URL.createObjectURL(f); im.alt = f.name; const x = document.createElement('button'); x.type = 'button'; x.textContent = '✕'; x.setAttribute('aria-label', 'Retirer ' + f.name); x.onclick = () => { files.splice(i, 1); render(); }; d.append(im, x); thumbs.append(d); }); };
+  const add = list => { files = files.concat([...list].filter(f => f.type.startsWith('image/'))).slice(0, 6); render(); };
+  input.addEventListener('change', () => add(input.files));
+  ['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+  ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+  drop.addEventListener('drop', e => add(e.dataTransfer.files));
+
+  // Validation
+  const rules = {
+    nom: v => v.trim().length > 1,
+    tel: v => v.replace(/\D/g, '').length >= 10,
+    courriel: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+    ville: v => v.trim().length > 1,
+    cp: v => /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/i.test(v.trim()),
+    desc: v => v.trim().length > 4
+  };
+  Object.keys(rules).forEach(k => form[k].addEventListener('blur', () => form[k].closest('.field').classList.toggle('err', !rules[k](form[k].value))));
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!form.type.value) { pickFirst.classList.add('show'); return; }
+    let first = null;
+    Object.keys(rules).forEach(k => { const ok = rules[k](form[k].value); form[k].closest('.field').classList.toggle('err', !ok); if (!ok && !first) first = form[k]; });
+    if (first) { first.focus(); return; }
+    // >>> Brancher ici l'envoi réel (fetch vers WPForms, Formspree, etc.) et le courriel automatique <<<
+    form.style.display = 'none'; const t = $('#thanks'); t.classList.add('show'); t.focus();
+  });
+  $('#again').addEventListener('click', () => { form.reset(); files = []; render(); $('#thanks').classList.remove('show'); form.style.display = ''; fields.classList.remove('show'); ctxOwner.classList.remove('show'); pickFirst.classList.add('show'); $$('.field.err').forEach(f => f.classList.remove('err')); });
+})();
 </script>
 </body>
 </html>
