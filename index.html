@@ -196,8 +196,6 @@ section{padding:96px 0}
 #map .city text{font-size:22px;font-weight:600;fill:var(--navy);font-family:var(--font)}
 #map .city.main circle{fill:var(--blue)}
 #map .city.main text{font-weight:800;fill:var(--blue);font-size:28px}
-#map .city.tbc circle{fill:#fff;stroke:#c2410c;stroke-width:2.5}
-#map .city.tbc text{fill:#c2410c}
 #map .city:hover circle,#map .city.on circle{r:11}
 #map .city.on text{fill:var(--blue)}
 .map-tip{font-size:14px;color:var(--muted);min-height:22px;margin-top:6px;text-align:center}
@@ -305,18 +303,6 @@ footer .legal{border-top:1px solid #1d2c45;margin-top:40px;padding-top:22px;disp
 /* Mobile call bar */
 .callbar{display:none}
 
-/* Review notes (mode révision) */
-.todo{display:none;font-size:12.5px;line-height:1.4;font-weight:600;color:#9a3412;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:7px 10px;margin:10px 0}
-.todo::before{content:"À confirmer · ";font-weight:800;letter-spacing:.02em}
-body.review .todo{display:block}
-.pending-only{display:none}
-body.review .pending-only{display:block}
-.review-toggle{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 8px;font-size:13px;font-weight:700;color:var(--navy);box-shadow:var(--shadow-s);cursor:pointer;font-family:inherit}
-.review-toggle .sw{width:38px;height:22px;border-radius:99px;background:#cbd5e1;position:relative;transition:background .2s}
-.review-toggle .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s}
-body.review .review-toggle .sw{background:#ea580c}
-body.review .review-toggle .sw::after{transform:translateX(16px)}
-
 /* Animations */
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
@@ -352,7 +338,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
   .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px}
   .callbar a{flex:1;justify-content:center;padding:12px 10px;font-size:15px}
   body{padding-bottom:76px}
-  .review-toggle{bottom:86px}
 }
 @media (max-width:560px){
   body{font-size:16px}
@@ -379,7 +364,7 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
 }
 </style>
 </head>
-<body class="review">
+<body>
 
 <!-- ============ EN-TÊTE ============ -->
 <header class="header" id="top">
@@ -436,7 +421,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
     <p class="hand">Un confort durable, ici, chez nous.</p>
     <div>
       <p>Climatisation LOL, c'est une petite entreprise de Saint-Jérôme fondée par Louis-Olivier et Cynthia. Nous accompagnons les propriétaires des Laurentides et de la Rive-Nord avec des conseils clairs et un travail soigné.</p>
-      <p class="todo">Texte exact du bloc beige à valider avec Cynthia (titre + 2 ou 3 phrases maximum).</p>
     </div>
   </div>
 </div>
@@ -460,7 +444,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 21V5l8-2v18M12 8h8v13M2 21h20M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2" stroke-linecap="round"/></svg>
           Voir la bonification pour les multilogements<span class="ext">Site officiel ↗</span></a>
       </div>
-      <p class="todo">Liens : vérifier les adresses exactes des 3 pages officielles LogisVert (outil de vérification, demande, multilogements).</p>
     </div>
     <div class="ads rv d2">
       <div class="ad a1"><img src="images/pub-mitsubishi-electric.webp" alt="Publicité Mitsubishi Electric sur les subventions disponibles" width="510" height="520" loading="lazy"></div>
@@ -468,7 +451,7 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
       <p class="hand">Des solutions performantes, plus accessibles!</p>
     </div>
   </div>
-  <div class="wrap"><p class="todo">Publicités Mitsubishi Electric et Canair : utiliser les fichiers originaux et vérifier les montants affichés avant la mise en ligne.</p></div>
+  <div class="wrap"></div>
 </section>
 
 <!-- ============ 3. SERVICES ============ -->
@@ -535,7 +518,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
         <button class="shot" data-i="3" style="aspect-ratio:auto;height:100%"><img src="images/installation-etape-2-mur-briques.webp" alt="Vue d'ensemble de l'unité extérieure fixée au mur de briques" loading="lazy"></button>
       </div>
     </div>
-    <p class="todo">Remplacer les photos par les originaux du même projet (étapes réelles, photo finale si disponible).</p>
     <div class="foot rv">
       <div>
         <h3>Une installation, du début à la fin</h3>
@@ -591,7 +573,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Basés à Saint-Jérôme</div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5"/></svg>Des gens d'ici pour des gens d'ici</div>
       </div>
-      <p class="todo">Carte schématique. Joliette et Grenville (points orange) : couverture exacte à confirmer avant de les afficher.</p>
     </div>
   </div>
 </section>
@@ -613,20 +594,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
         <span><b>Louis-Olivier Lorrain</b>Copropriétaire · volet technique</span>
         <span><b>Cynthia Filion</b>Copropriétaire · suivi et accompagnement</span>
       </div>
-      <p class="todo">Photo naturelle de Cynthia et Louis-Olivier à fournir. Confirmer les années d'expérience et si l'origine du nom LOL doit être racontée.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 7. MARQUES ET GARANTIES (visible en mode révision seulement) ============ -->
-<section class="brands pending-only" id="marques" aria-label="Marques et garanties">
-  <div class="wrap">
-    <span class="eyebrow">Marques et garanties</span>
-    <p class="todo">Section masquée sur le site public tant que les marques, garanties et durées ne sont pas validées.</p>
-    <div class="brand-row">
-      <div>Marque 1 — logo et garantie à valider</div>
-      <div>Marque 2 — logo et garantie à valider</div>
-      <div>Marque 3 — logo et garantie à valider</div>
     </div>
   </div>
 </section>
@@ -647,7 +614,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
         <a class="btn btn-primary" href="#" data-todo="google-reviews">Lire nos avis sur Google</a>
         <a class="btn btn-ghost" href="#" data-todo="google-write">Laisser un avis</a>
       </div>
-      <p class="todo">Ajouter le lien de la fiche Google et un module d'avis (ex. extension WordPress). Ne jamais inscrire d'avis rédigés à la main.</p>
     </div>
   </div>
 </section>
@@ -707,7 +673,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
           </div>
           <datalist id="villes"></datalist>
           <p class="privacy">Les renseignements transmis servent uniquement à traiter votre demande. <a href="#" data-todo="privacy">Politique de confidentialité</a></p>
-          <p class="todo">Texte final de confidentialité à valider avec Cynthia. Brancher l'envoi (WPForms / Gravity Forms / Formspree) et le courriel automatique.</p>
           <div class="form-actions">
             <button class="btn btn-primary" type="submit">Envoyer ma demande <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             <span class="alt">ou appelez au <a href="tel:5146012546">514 601-2546</a></span>
@@ -737,7 +702,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
         <a class="brand" href="#top"><img src="images/logo-icone.webp" alt="" width="46" height="46"><span><b>Climatisation <span style="color:#7fb2ff">LOL</span> inc.</b><small>Thermopompes résidentielles</small></span></a>
         <p style="margin-top:18px">Saint-Jérôme, Rive-Nord et Laurentides</p>
         <p>Licence RBQ : 5866-8260-01</p>
-        <p class="todo" style="color:#9a3412">Numéro RBQ à confirmer une dernière fois. Aucun logo d'association sans confirmation.</p>
       </div>
       <div>
         <b class="t">Nous joindre</b>
@@ -747,7 +711,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
           <li>Lundi au vendredi, 7 h à 16 h</li>
           <li><a href="#" data-todo="facebook" rel="noopener">Facebook</a></li>
         </ul>
-        <p class="todo" style="color:#9a3412">Adresse courriel officielle et lien Facebook à confirmer.</p>
       </div>
       <div>
         <b class="t">Liens</b>
@@ -778,9 +741,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
   <button class="next" id="lbN" aria-label="Photo suivante">›</button>
 </div>
 
-<!-- Mode révision : affiche les éléments à confirmer. Retirer avant la mise en ligne. -->
-<button class="review-toggle" id="reviewToggle" type="button" aria-pressed="true"><span class="sw"></span>Mode révision</button>
-
 <script>
 (() => {
   const $ = (s, c = document) => c.querySelector(s);
@@ -806,10 +766,6 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
   /* --- Apparition au défilement --- */
   const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } }), { threshold: .12 });
   $$('.rv').forEach(el => rv.observe(el));
-
-  /* --- Mode révision --- */
-  const rt = $('#reviewToggle');
-  rt.addEventListener('click', () => { const on = document.body.classList.toggle('review'); rt.setAttribute('aria-pressed', on); });
   $$('[data-todo]').forEach(a => a.addEventListener('click', e => { if (a.getAttribute('href') === '#') e.preventDefault(); }));
 
   /* --- Carte du territoire --- */
@@ -819,8 +775,7 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
     ['Saint-Hippolyte', 437, 412], ['Sainte-Adèle', 320, 360], ['Saint-Sauveur', 280, 427], ['Morin-Heights', 210, 400],
     ['Sainte-Agathe-des-Monts', 250, 258], ['Saint-Adolphe-d\'Howard', 105, 325], ['Mont-Tremblant', 93, 123],
     ['Saint-Donat', 310, 42], ['Entrelacs', 440, 198], ['Sainte-Julienne', 613, 378], ['Saint-Lin–Laurentides', 715, 563],
-    ['Sainte-Anne-des-Plaines', 622, 582], ['Lachute', 190, 622], ['Saint-André-d\'Argenteuil', 60, 608],
-    ['Grenville', 40, 540, 'tbc'], ['Joliette', 815, 300, 'tbc']
+    ['Sainte-Anne-des-Plaines', 622, 582], ['Lachute', 190, 622], ['Saint-André-d\'Argenteuil', 60, 608]
   ];
   const g = $('#cities'), tip = $('#mapTip'), NS = 'http://www.w3.org/2000/svg';
   const labelSide = { 'Mont-Tremblant':1, 'Saint-Donat':1, 'Lachute':1, 'Prévost':1, 'Saint-Hippolyte':1, 'Sainte-Adèle':1, 'Sainte-Sophie':1, 'Sainte-Julienne':1, 'Blainville':1, 'Rosemère':1, 'Entrelacs':1, 'Saint-Jérôme':1 };
@@ -834,23 +789,17 @@ body.review .review-toggle .sw::after{transform:translateX(16px)}
     if (x > 700 && !cls) { t.setAttribute('x', x - 12); t.setAttribute('text-anchor', 'end'); }
     const ov = { 'Saint-Sauveur':['end',-14,7], 'Morin-Heights':['end',-14,7], 'Saint-André-d\'Argenteuil':['start',-20,36], 'Mirabel':['middle',0,32], 'Saint-Lin–Laurentides':['start',-40,-16], 'Lachute':['middle',0,-16], 'Prévost':['start',14,7] }[name];
     if (ov) { t.setAttribute('text-anchor', ov[0]); t.setAttribute('x', x + ov[1]); t.setAttribute('y', y + ov[2]); }
-    if (name === 'Joliette') { t.setAttribute('x', x); t.setAttribute('y', y - 18); t.setAttribute('text-anchor', 'middle'); }
-    if (name === 'Grenville') { t.setAttribute('x', x - 6); t.setAttribute('y', y - 16); t.setAttribute('text-anchor', 'start'); }
     t.textContent = name.length > 18 && cls !== 'main' ? name.replace('Sainte-', 'Ste-').replace('Saint-', 'St-') : name;
     const listed = ['Saint-Jérôme','Mirabel','Blainville','Sainte-Thérèse','Boisbriand','Rosemère','Saint-Sauveur','Sainte-Agathe-des-Monts','Lachute','Saint-André-d\'Argenteuil','Saint-Donat','Mont-Tremblant'];
     if (!listed.includes(name) && !cls) el.classList.add('minor');
     el.append(c, t); g.append(el);
-    if (cls === 'tbc') el.classList.add('pending-svg');
     const show = () => {
       $$('.city', g).forEach(n => n.classList.remove('on')); el.classList.add('on');
-      tip.textContent = cls === 'main' ? 'Saint-Jérôme — notre port d\'attache' : cls === 'tbc' ? name + ' — couverture à confirmer' : name + ' — secteur desservi';
+      tip.textContent = cls === 'main' ? 'Saint-Jérôme — notre port d\'attache' : name + ' — secteur desservi';
     };
     el.addEventListener('mouseenter', show); el.addEventListener('focus', show); el.addEventListener('click', show);
   });
-  // Points « à confirmer » visibles seulement en mode révision
-  const syncTbc = () => $$('.pending-svg').forEach(n => n.style.display = document.body.classList.contains('review') ? '' : 'none');
-  syncTbc(); rt.addEventListener('click', syncTbc);
-  $('#villes').innerHTML = cities.filter(c => c[3] !== 'tbc').map(c => `<option value="${c[0]}">`).join('');
+  $('#villes').innerHTML = cities.map(c => `<option value="${c[0]}">`).join('');
 
   /* --- Lightbox Réalisations --- */
   const shots = $$('.shot'); let cur = 0;
